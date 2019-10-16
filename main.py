@@ -13,30 +13,27 @@ class Product():
     This the class for the products coming in 
     """
 
+
     def __init__(self, barcode: int):
         """
-        This is the inti function for all the main parts of the code
+        Creates the product (barcode)
         """
         self.barcode = barcode
-        pass
 
-    def on_trolly(self):
+
+    def on_trolly(self, trolly: int):
         """Returns the trolly number
+        Places the product on a trolly.
         """
 
-    def off_trolly(self, trolly: int):
-        """Deletes the trolly attribute
-        Args:
-            trolly: the trolly number
-        Return:
-            deletes the trolly number and returns a bin number
-        """
 
-    def in_bin(self, shelf: int, compartment: int):
-        """Adds the bin into a shelf and compartment
+    def in_bin(self, bin: int, shelf: int, compartment: int):
+        """Removes product from trolly and places it into a bin, with a shelf
+        and compartment number
         Args:
-            shelf: where the shelf is
-            compartment: where the compartment is 
+            bin: bin number, location
+            shelf: shelf number, location
+            compartment: compartment number, location
         Return:
-            the attribute of the new object
+            New location of product
         """
