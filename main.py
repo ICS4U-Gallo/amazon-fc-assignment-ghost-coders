@@ -26,7 +26,6 @@ class Product():
         Places the product on a trolly.
         """
 
-
     def in_bin(self, bin: int, shelf: int, compartment: int):
         """Removes product from trolly and places it into a bin, with a shelf
         and compartment number
