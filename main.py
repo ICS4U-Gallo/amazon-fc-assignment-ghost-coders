@@ -8,7 +8,7 @@ Shelf number
 Compartment number
 """
 
-class Product():
+class Product:
     """
     This the class for the products coming in 
     """
@@ -36,3 +36,9 @@ class Product():
         Return:
             New location of product
         """
+
+class Cart:
+    def __init__(self):
+        self.item = []
+
+        
