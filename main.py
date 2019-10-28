@@ -59,7 +59,6 @@ class Trolly:
     def remove(self, item):
         self.item.remove(item)
 
-
 class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
