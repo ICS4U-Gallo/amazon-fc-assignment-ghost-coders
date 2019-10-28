@@ -49,7 +49,8 @@ class Item:
     """
     Should hold the item
     """
-    def __init__(self, barcode: int):
+    def __init__(self, name: str, barcode: int):
+        self.name = name
         self.barcode = barcode
 
 class Shelf:
