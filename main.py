@@ -10,9 +10,8 @@ Compartment number
 
 class Product:
     """
-    This the class for the products coming in 
+    Product Class
     """
-
 
     def __init__(self, barcode: int):
         """
@@ -21,12 +20,12 @@ class Product:
         self.barcode = barcode
 
 
-    def on_trolly(self, trolly: int):
+    def on_cart(self, cart: Cart):
         """Returns the trolly number
         Places the product on a trolly.
         """
 
-    def in_bin(self, bin: int, shelf: int, compartment: int):
+    def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
         """Removes product from trolly and places it into a bin, with a shelf
         and compartment number
         Args:
@@ -36,7 +35,11 @@ class Product:
         Return:
             New location of product
         """
+
 class Cart:
+    """
+    Cart Class
+    """
     
     def __init__(self):
         self.item = []
@@ -44,14 +47,6 @@ class Cart:
         self.item.append(item)
     def remove(self, item):
         self.item.remove(item)
-
-class Item:
-    """
-    Should hold the item
-    """
-    def __init__(self, name: str, barcode: int):
-        self.name = name
-        self.barcode = barcode
 
 class Shelf:
     def __init__(self):
