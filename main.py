@@ -45,7 +45,6 @@ class Cart:
     def remove(self, item):
         self.item.remove(item)
 
-<<<<<<< HEAD
 class Item:
     """
     Should hold the item
@@ -60,31 +59,3 @@ class Shelf:
         }
     def add(self, compartment, item):
         self.compartment[compartment].append(item)
-=======
-    def add(self, item):
-        self.item.append(item)
-    
-    def remove(self. item):
-        self.item.remove(item)
-
-class Shelf:
-    def __init__(self):
-        self.position = {
-            "A1": "",
-            "A2": "",
-            "A3": "",
-            "A4": "",
-        }
-
-    def add(self, item):
-        for value in self.position.values():
-            if value == "":
-                value = item
-
-    def remove(self, item):
-        for value in self.position.values():
-            if value == item:
-                value = ""
-
-    
->>>>>>> 644d1b7a838ed3b1e7704c68567525eb7bf8b2a4
