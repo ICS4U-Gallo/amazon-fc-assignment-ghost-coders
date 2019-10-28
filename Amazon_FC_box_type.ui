@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Small Box</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Fragile</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Large Box</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Medium Box</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
