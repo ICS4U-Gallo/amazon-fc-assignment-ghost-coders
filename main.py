@@ -46,7 +46,11 @@ class Cart:
         self.item.remove(item)
 
 class Item:
-    pass
+    """
+    Should hold the item
+    """
+    def __init__(self, barcode: int):
+        self.barcode = barcode
 
 class Shelf:
     def __init__(self):
