@@ -20,7 +20,7 @@ class Product:
         self.barcode = barcode
 
 
-    def on_cart(self, cart: Cart):
+    def on_trolly(self, trolly: Trolly):
         """Returns the trolly number
         Places the product on a trolly.
         """
@@ -37,22 +37,33 @@ class Product:
             New location of product
         """
         pass
+    
+    def in_bin(self, bin: Bin, product: Product):
+        """
+        Places the products ordered onto the bin
+        """
+        pass
 
 
-class Cart:
-    """
-    Cart Class
+class Trolly:
+    """Trolly Class
+    Carries product from truck to shelf and compartment
     """
     
     def __init__(self):
         self.item = []
+
     def add(self,item):
         self.item.append(item)
+
     def remove(self, item):
         self.item.remove(item)
 
 
 class Shelf:
+    """Shelf Class
+    Holds the product in a specific shelf and compartment location (number)
+    """
     def __init__(self):
         self.compartment = {
             "B3": []
@@ -61,6 +72,12 @@ class Shelf:
         self.compartment[compartment].append(item)
 
 
+class Bin:
+    """Bin Class
+    Collects the products ordered and carries it to the packaging station
+    """
+    def __init__(self, number: int):
+        pass
 
 
 
@@ -85,12 +102,7 @@ class Shelf:
 #         self.shelf.number = shelf
         
 #         self.shelf.compartment_num = compartment
-    
-#     def get_shelf_number(self):
-#         return self.shelf_number
-    
-#     def get_shelf_compartment_num(self):
-#         return self.shelf.compartment_num
+
 
 #     def in_bin(self, bin_number: int):
 #         """Removes product from trolly and places it into a bin, with a shelf
@@ -104,44 +116,3 @@ class Shelf:
 #         """
 #         self.bin_number = bin_number
         
-    
-#     def get_bin_number(self):
-#         return self.bin_number
-    
-# class Trolly:
-#     """
-#     Placed product into a trolly with a trolly number. 
-#     """
-#     def __init__(self, trolly_num: int):
-#         self.trolly_num = trolly_num
-#         self.trolly_list = []
-
-    
-#     def add_product(self, product: Product):
-#         self.trolly_list.append(product)
-    
-    
-#     def delate_product(self, barcod: int):
-#         for item.barcode in self.trolly_list:
-#             if item.barcode == barcode:
-#                 self.trolly_list.remove(item)
-    
-    
-#     def get_trolly(self):
-#         return self.trolly_list
-
-# class Shelf:
-#     '''
-#     Remove product in trolly and placed in a shelf with its own trolly number and compartment number
-    
-#     '''
-    
-# class Bin:
-#     '''
-#     Remove product in shelf and placed in a bin with bin number
-#     '''
-    
-# class Control:
-#     '''
-#     control the add and remove function
-#     '''
