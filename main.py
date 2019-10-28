@@ -64,12 +64,15 @@ class Shelf:
     Holds the product in a specific shelf and compartment location (number)
     """
     def __init__(self):
-        self.compartment = {
-            "B3": []
-        }
-    def add(self, compartment, item):
-        self.compartment[compartment].append(item)
+        self.compartment = {}
 
+
+    def add(self, compartment_num, item):
+        if compartment_num in self.compartment.keys():
+            self.compartment[compartment_num].append(item)
+        else:
+            self.compartment[compartment_num] = []
+            self.compartment[compartment_num].append(item)
 
 class Bin:
     """Bin Class
