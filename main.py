@@ -36,12 +36,26 @@ class Product:
         Return:
             New location of product
         """
-
 class Cart:
+    
     def __init__(self):
         self.item = []
+    def add(self,item):
+        self.item.append(item)
+    def remove(self, item):
+        self.item.remove(item)
 
+class Item:
+    """
+    Should hold the item
+    """
+    def __init__(self, barcode: int):
+        self.barcode = barcode
 
-cart = Cart()
-
-product = Product()
+class Shelf:
+    def __init__(self):
+        self.compartment = {
+            "B3": []
+        }
+    def add(self, compartment, item):
+        self.compartment[compartment].append(item)
