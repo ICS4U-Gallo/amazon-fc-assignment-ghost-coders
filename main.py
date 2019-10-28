@@ -41,4 +41,7 @@ class Cart:
     def __init__(self):
         self.item = []
 
-        
+
+cart = Cart()
+
+product = Product()
