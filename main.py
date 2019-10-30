@@ -64,8 +64,11 @@ class Shelf:
         with open("Compartment.json", "w") as f:
             storage = json.load(f)
         
-        for key in storage.values():
-            # for key
+        for key, value in storage.items():
+            for key, value in value.items():
+                for barcode in value:
+                    if item.barcode in value:
+                        value.remove(item.barcode)
 
 
 class Bin:
