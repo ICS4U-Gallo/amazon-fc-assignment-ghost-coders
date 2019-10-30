@@ -1,3 +1,6 @@
+import json
+from typing import List
+
 """
 Product
 ====
@@ -11,31 +14,18 @@ Compartment number
 class Product:
     """
     Product Class
+
+    Attributes:
+        barcode = int
     """
 
     def __init__(self, barcode: int):
         """
         Creates the product (barcode)
+        Args:
+            barcode: the item's barcode
         """
         self.barcode = barcode
-
-    def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
-        """Removes product from trolly and places it into a bin, with a shelf
-        and compartment number
-        Args:
-            bin: bin number, location
-            shelf: shelf number, location
-            compartment: compartment number, location
-        Return:
-            New location of product
-        """
-        pass
-    
-    def in_bin(self, bin: Bin, : Product):product
-        """
-        Places the products ordered onto the bin
-        """
-        pass
 
 
 class Trolly:
@@ -54,37 +44,56 @@ class Trolly:
             if item.barcode == barcode:
                 Trolly.trolly_list.remove(item)
     
-    def get_trolly(self):
-        return Trolly.trolly_list
+    def __init__(self):
+        self.trolly = []
 
+    def add(self,item: Product):
+        self.trolly.append(item.barcode)
+
+    def remove(self, item: Product):
+        self.trolly.remove(item.barcode)
 
 class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self):
-        self.compartment = {}
+    def __init__(self, shelf_num: str, compartment_num: int):
+        self.shelf_num = shelf_num
+        self.compartment_num = compartment_num
 
 
-    def add(self, compartment_num, item):
-        if compartment_num in self.compartment.keys():
-            self.compartment[compartment_num].append(item)
-        else:
-            self.compartment[compartment_num] = []
-            self.compartment[compartment_num].append(item)
+    def add(self, shelf_num: str, compartment_num: int, item: Product):
+        with open("Compartment.json", 'r') as f:
+            storage = json.load(f)
+        
+        storage[shelf_num][compartment_num].append(item.barcode)
+
+        with open("Compartment.json", "w") as f:
+            json.dump(storage, f)
+
+    def remove(self, item: Product):
+        with open("Compartment.json", "w") as f:
+            storage = json.load(f)
+        
+        
 
 class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
     def __init__(self, number: int):
+        self.number = number
+
+    def add(self, bin_num: int, item: Product):
+        pass
+
+    def remove(self, item: Product):
         pass
 
 
 class Packaging:
     """Packaging Class
     Prepares the products (the order) for shipment to customer
-
     Attributes:
         box_type = small, medium, large, fragile
         address = where product is sent to
@@ -95,42 +104,12 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-
-
-# class Product:
-#     """
-#     This the class for the products coming in 
-#     """
-
-
-#     def __init__(self, barcode: int):
-#         """
-#         Creates the product (barcode)
-#         """
-#         self.barcode = barcode
-
     
-#     def on_shelf(self, shelf: int, compartment: int):
-#         """Returns the shelf number
-#         Places the product on a bin.
-#         """
-#         self.shelf.number = shelf
-        
-#         self.shelf.compartment_num = compartment
+    def shipment(self):
+        return "Product has been shipped."
+    
+def main():
+    pass
 
-
-#     def in_bin(self, bin_number: int):
-#         """Removes product from trolly and places it into a bin, with a shelf
-#         and compartment number
-#         Args:
-#             bin: bin number, location
-#             shelf: shelf number, location
-#             compartment: compartment number, location
-#         Return:
-#             New location of product
-#         """
-#         self.bin_number = bin_number
-        
-
-
-
+if __name__ == "__main__":
+    main()
