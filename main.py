@@ -27,7 +27,7 @@ class Product:
         """Returns the trolly number
         Places the product on a trolly.
         """
-        self.trolly = Trolly()
+        self.trolly = trolly
 
     def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
         """Removes product from trolly and places it into a bin, with a shelf
@@ -39,14 +39,15 @@ class Product:
         Return:
             New location of product
         """
-        pass
+        self.shelf = shelf
+        self.compartment = compartment
     
     def in_bin(self, bin_number: Bin, product: Product):
         """
         Places the products ordered onto the bin
         """
-        self.bin_number = Bin.number
-        self.product = Product()
+        self.bin_number = bin_number
+        self.product = product
 
 
 class Trolly:
@@ -67,11 +68,15 @@ class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self):
-        self.compartment = {}
+    def __init__(self, shelf_num: str, compartment_num: int):
+        self.shelf_num = shelf_num
+        self.compartment_num = compartment_num
 
 
-    def add(self, compartment_num, item):
+    def add(self, shelf_num, compartment_num, item: Product):
+        
+
+
         if compartment_num in self.compartment.keys():
             self.compartment[compartment_num].append(item)
         else:
@@ -83,7 +88,7 @@ class Bin:
     Collects the products ordered and carries it to the packaging station
     """
     def __init__(self, number: int):
-        pass
+        self.number = number
 
 
 class Packaging:
@@ -100,3 +105,12 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
+
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
