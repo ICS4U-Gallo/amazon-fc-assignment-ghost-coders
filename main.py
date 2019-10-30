@@ -39,14 +39,10 @@ class Trolly:
     def add_product(self, product: Product):
         Trolly.trolly_list.append(product)
      
-<<<<<<< HEAD
     def delate_product(self, barcode: int, item: Product):
-=======
-    def delate_product(self, barcode: int):
->>>>>>> f72d67e12d58de678dcf4c33b5fe7d888a2ee9b0
         for item.barcode in Trolly.trolly_list:
             if item.barcode == barcode:
-                Trolly.trolly_list.remove(item)
+                Trolly.trolly_list.remove(item.barcode)
     
 
 
@@ -74,6 +70,7 @@ class Shelf:
         
         for key in storage.values():
             # for key
+            pass
 
 
 class Bin:
