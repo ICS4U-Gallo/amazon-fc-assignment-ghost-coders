@@ -11,6 +11,9 @@ Compartment number
 class Product:
     """
     Product Class
+
+    Attributes:
+        barcode = int
     """
 
     def __init__(self, barcode: int):
@@ -24,7 +27,7 @@ class Product:
         """Returns the trolly number
         Places the product on a trolly.
         """
-        pass
+        self.trolly = Trolly()
 
     def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
         """Removes product from trolly and places it into a bin, with a shelf
@@ -38,11 +41,12 @@ class Product:
         """
         pass
     
-    def in_bin(self, bin: Bin, product: Product):
+    def in_bin(self, bin_number: Bin, product: Product):
         """
         Places the products ordered onto the bin
         """
-        pass
+        self.bin_number = Bin.number
+        self.product = Product()
 
 
 class Trolly:
@@ -96,42 +100,3 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-
-
-# class Product:
-#     """
-#     This the class for the products coming in 
-#     """
-
-
-#     def __init__(self, barcode: int):
-#         """
-#         Creates the product (barcode)
-#         """
-#         self.barcode = barcode
-
-    
-#     def on_shelf(self, shelf: int, compartment: int):
-#         """Returns the shelf number
-#         Places the product on a bin.
-#         """
-#         self.shelf.number = shelf
-        
-#         self.shelf.compartment_num = compartment
-
-
-#     def in_bin(self, bin_number: int):
-#         """Removes product from trolly and places it into a bin, with a shelf
-#         and compartment number
-#         Args:
-#             bin: bin number, location
-#             shelf: shelf number, location
-#             compartment: compartment number, location
-#         Return:
-#             New location of product
-#         """
-#         self.bin_number = bin_number
-        
-
-
-
