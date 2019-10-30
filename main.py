@@ -23,7 +23,7 @@ class Product:
         """
         Creates the product (barcode)
         Args:
-            barcode: the item's barcode
+            barcode: int
         """
         self.barcode = barcode
 
@@ -53,6 +53,7 @@ class Trolly:
     def remove(self, item: Product):
         self.trolly.remove(item.barcode)
 
+
 class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
@@ -75,7 +76,9 @@ class Shelf:
         with open("Compartment.json", "w") as f:
             storage = json.load(f)
         
-        
+        for key in storage.values():
+            # for key
+
 
 class Bin:
     """Bin Class
