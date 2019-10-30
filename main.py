@@ -82,6 +82,20 @@ class Bin:
         pass
 
 
+class Packaging:
+    """Packaging Class
+    Prepares the products (the order) for shipment to customer
+
+    Attributes:
+        box_type = small, medium, large, fragile
+        address = where product is sent to
+        truck = transportation, license plate
+    """
+
+    def __init__(self, box_type: str, address: str, truck: str):
+        self.box_type = box_type
+        self.address = address
+        self.truck = truck
 
 
 # class Product:
@@ -118,3 +132,6 @@ class Bin:
 #         """
 #         self.bin_number = bin_number
         
+
+
+
