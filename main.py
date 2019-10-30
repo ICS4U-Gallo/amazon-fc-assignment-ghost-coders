@@ -30,9 +30,6 @@ class Product:
 
 class Trolly:
     """
-<<<<<<< HEAD
-    trolly_list = []
-=======
     Placed product into a trolly with a trolly number. 
     """
     trolly_list = []
@@ -42,22 +39,11 @@ class Trolly:
     def add_product(self, product: Product):
         Trolly.trolly_list.append(product)
      
-    def delate_product(self, barcod: int):
+    def delate_product(self, barcode: int):
         for item.barcode in Trolly.trolly_list:
             if item.barcode == barcode:
                 Trolly.trolly_list.remove(item)
->>>>>>> 738c10855e5b2b8f43564f6c15c09f2c219c0163
     
-    def __init__(self, trolly_number: int):
-        self.trolly_number = trolly_number
-
-    def add(self,item: Product):
-        Trolly.trolly_list.append(item.barcode)
-
-    def remove(self, item: Product):
-        for item.barcode in Trolly.trolly_list:
-            if item.barcode == barcode:
-                Trolly.trolly_list.remove(item.barcode)
 
 
 class Shelf:
@@ -79,16 +65,12 @@ class Shelf:
             json.dump(storage, f)
 
     def remove(self, item: Product):
-<<<<<<< HEAD
-        pass
-=======
         with open("Compartment.json", "w") as f:
             storage = json.load(f)
         
         for key in storage.values():
             # for key
 
->>>>>>> 738c10855e5b2b8f43564f6c15c09f2c219c0163
 
 class Bin:
     """Bin Class
