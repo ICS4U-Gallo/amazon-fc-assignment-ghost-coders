@@ -11,6 +11,9 @@ Compartment number
 class Product:
     """
     Product Class
+
+    Attributes:
+        barcode = int
     """
 
     def __init__(self, barcode: int):
@@ -24,7 +27,7 @@ class Product:
         """Returns the trolly number
         Places the product on a trolly.
         """
-        pass
+        self.trolly = trolly
 
     def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
         """Removes product from trolly and places it into a bin, with a shelf
@@ -36,13 +39,15 @@ class Product:
         Return:
             New location of product
         """
-        pass
+        self.shelf = shelf
+        self.compartment = compartment
     
-    def in_bin(self, bin: Bin, product: Product):
+    def in_bin(self, bin_number: Bin, product: Product):
         """
         Places the products ordered onto the bin
         """
-        pass
+        self.bin_number = bin_number
+        self.product = product
 
 
 class Trolly:
@@ -53,21 +58,25 @@ class Trolly:
     def __init__(self):
         self.item = []
 
-    def add(self,item):
-        self.item.append(item)
+    def add(self,item: Product):
+        self.item.append(item.barcode)
 
-    def remove(self, item):
-        self.item.remove(item)
+    def remove(self, item: Product):
+        self.item.remove(item.barcode)
 
 class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self):
-        self.compartment = {}
+    def __init__(self, shelf_num: str, compartment_num: int):
+        self.shelf_num = shelf_num
+        self.compartment_num = compartment_num
 
 
-    def add(self, compartment_num, item):
+    def add(self, shelf_num, compartment_num, item: Product):
+        
+
+
         if compartment_num in self.compartment.keys():
             self.compartment[compartment_num].append(item)
         else:
@@ -79,7 +88,7 @@ class Bin:
     Collects the products ordered and carries it to the packaging station
     """
     def __init__(self, number: int):
-        pass
+        self.number = number
 
 
 class Packaging:
@@ -98,6 +107,7 @@ class Packaging:
     
 
 
+<<<<<<< HEAD
 # class Product:
 #     """
 #     This the class for the products coming in 
@@ -132,3 +142,12 @@ class Packaging:
 #         """
 #         self.bin_number = bin_number
         
+=======
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
+>>>>>>> f757b3ed91d21e907d689aaf24d981986091f1d8
