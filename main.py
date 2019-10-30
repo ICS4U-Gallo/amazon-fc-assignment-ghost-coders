@@ -1,3 +1,6 @@
+import json
+from typing import List
+
 """
 Product
 ====
@@ -23,46 +26,19 @@ class Product:
         self.barcode = barcode
 
 
-    def on_trolly(self, trolly: Trolly):
-        """Returns the trolly number
-        Places the product on a trolly.
-        """
-        self.trolly = trolly
-
-    def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
-        """Removes product from trolly and places it into a bin, with a shelf
-        and compartment number
-        Args:
-            bin: bin number, location
-            shelf: shelf number, location
-            compartment: compartment number, location
-        Return:
-            New location of product
-        """
-        self.shelf = shelf
-        self.compartment = compartment
-    
-    def in_bin(self, bin_number: Bin, product: Product):
-        """
-        Places the products ordered onto the bin
-        """
-        self.bin_number = bin_number
-        self.product = product
-
-
 class Trolly:
     """Trolly Class
     Carries product from truck to shelf and compartment
     """
     
     def __init__(self):
-        self.item = []
+        self.trolly = []
 
     def add(self,item: Product):
-        self.item.append(item.barcode)
+        self.trolly.append(item.barcode)
 
     def remove(self, item: Product):
-        self.item.remove(item.barcode)
+        self.trolly.remove(item.barcode)
 
 class Shelf:
     """Shelf Class
@@ -73,15 +49,17 @@ class Shelf:
         self.compartment_num = compartment_num
 
 
-    def add(self, shelf_num, compartment_num, item: Product):
+    def add(self, shelf_num: str, compartment_num: int, item: Product):
+        with open("Compartment.json", 'r') as f:
+            storage = json.load(f)
         
+        storage[shelf_num][compartment_num].append(item.barcode)
 
+        with open("Compartment.json", "w") as f:
+            json.dump(storage, f)
 
-        if compartment_num in self.compartment.keys():
-            self.compartment[compartment_num].append(item)
-        else:
-            self.compartment[compartment_num] = []
-            self.compartment[compartment_num].append(item)
+    def remove(self, item: Product):
+        pass
 
 class Bin:
     """Bin Class
@@ -89,6 +67,12 @@ class Bin:
     """
     def __init__(self, number: int):
         self.number = number
+
+    def add(self, bin_num: int, item: Product):
+        pass
+
+    def remove(self, item: Product):
+        pass
 
 
 class Packaging:
