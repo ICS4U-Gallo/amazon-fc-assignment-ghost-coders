@@ -61,7 +61,10 @@ class Shelf:
             json.dump(storage, f)
 
     def remove(self, item: Product):
-        pass
+        with open("Compartment.json", "w") as f:
+            storage = json.load(f)
+        
+        
 
 class Bin:
     """Bin Class
@@ -90,6 +93,9 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
+    
+    def shipment(self):
+        return "Product has been shipped."
     
 def main():
     pass
