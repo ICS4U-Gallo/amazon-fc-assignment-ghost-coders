@@ -85,7 +85,6 @@ class Bin:
 class Packaging:
     """Packaging Class
     Prepares the products (the order) for shipment to customer
-
     Attributes:
         box_type = small, medium, large, fragile
         address = where product is sent to
@@ -96,6 +95,7 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
+    
 
 
 # class Product:
@@ -132,6 +132,3 @@ class Packaging:
 #         """
 #         self.bin_number = bin_number
         
-
-
-
