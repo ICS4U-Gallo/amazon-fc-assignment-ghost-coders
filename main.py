@@ -32,15 +32,18 @@ class Trolly:
     """Trolly Class
     Carries product from truck to shelf and compartment
     """
+    trolly_list = []
     
-    def __init__(self):
-        self.trolly = []
+    def __init__(self, trolly_number: int):
+        self.trolly_number = trolly_number
 
     def add(self,item: Product):
-        self.trolly.append(item.barcode)
+        Trolly.trolly_list.append(item.barcode)
 
     def remove(self, item: Product):
-        self.trolly.remove(item.barcode)
+        for item.barcode in Trolly.trolly_list:
+            if item.barcode == barcode:
+                Trolly.trolly_list.remove(item.barcode)
 
 class Shelf:
     """Shelf Class
@@ -61,23 +64,27 @@ class Shelf:
             json.dump(storage, f)
 
     def remove(self, item: Product):
-        with open("Compartment.json", "w") as f:
-            storage = json.load(f)
-        
-        
+        pass
 
 class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
+    bin_dict = {}
+
     def __init__(self, number: int):
         self.number = number
 
     def add(self, bin_num: int, item: Product):
-        pass
+        if bin_num not in Bin.bin_dict.keys():
+            Bin.bin_dict[bin_num] = item
+        else:
+            Bin.bin_dict[bin_num] = item
 
     def remove(self, item: Product):
-        pass
+        for value in Bin.bin_dict.values():
+            if value == item:
+                value = ""
 
 
 class Packaging:
@@ -93,9 +100,7 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-    
-    def shipment(self):
-        return "Product has been shipped."
+
     
 def main():
     pass
