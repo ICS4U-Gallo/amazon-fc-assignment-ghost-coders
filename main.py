@@ -36,6 +36,9 @@ class Product:
         Return:
             New location of product
         """
+        self.shelf.number = shelf
+        self.shelf.compartment_num = compartment
+        
         pass
     
     def in_bin(self, bin: Bin, product: Product):
@@ -53,11 +56,11 @@ class Trolly:
     def __init__(self):
         self.item = []
 
-    def add(self,item):
-        self.item.append(item)
+    def add(self,item: Product):
+        self.item.append(item.barcode)
 
-    def remove(self, item):
-        self.item.remove(item)
+    def remove(self, item: Product):
+        self.item.remove(item.barcode)
 
 class Shelf:
     """Shelf Class
@@ -76,7 +79,7 @@ class Bin:
     Collects the products ordered and carries it to the packaging station
     """
     def __init__(self, number: int):
-        pass
+        pasself.bin_number = number
 
 
 
