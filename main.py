@@ -19,6 +19,8 @@ class Product:
     def __init__(self, barcode: int):
         """
         Creates the product (barcode)
+        Args:
+            barcode: the item's barcode
         """
         self.barcode = barcode
 
@@ -105,49 +107,8 @@ class Packaging:
         self.address = address
         self.truck = truck
     
-
-
-<<<<<<< HEAD
-# class Product:
-#     """
-#     This the class for the products coming in 
-#     """
-
-
-#     def __init__(self, barcode: int):
-#         """
-#         Creates the product (barcode)
-#         """
-#         self.barcode = barcode
-
-    
-#     def on_shelf(self, shelf: int, compartment: int):
-#         """Returns the shelf number
-#         Places the product on a bin.
-#         """
-#         self.shelf.number = shelf
-        
-#         self.shelf.compartment_num = compartment
-
-
-#     def in_bin(self, bin_number: int):
-#         """Removes product from trolly and places it into a bin, with a shelf
-#         and compartment number
-#         Args:
-#             bin: bin number, location
-#             shelf: shelf number, location
-#             compartment: compartment number, location
-#         Return:
-#             New location of product
-#         """
-#         self.bin_number = bin_number
-        
-=======
-
 def main():
     pass
 
-
 if __name__ == "__main__":
     main()
->>>>>>> f757b3ed91d21e907d689aaf24d981986091f1d8
