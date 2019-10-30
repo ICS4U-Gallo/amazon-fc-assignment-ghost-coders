@@ -23,16 +23,30 @@ class Product:
         """
         Creates the product (barcode)
         Args:
-            barcode: the item's barcode
+            barcode: int
         """
         self.barcode = barcode
 
 
 class Trolly:
-    """Trolly Class
-    Carries product from truck to shelf and compartment
+    """
+<<<<<<< HEAD
+    trolly_list = []
+=======
+    Placed product into a trolly with a trolly number. 
     """
     trolly_list = []
+    def __init__(self, trolly_num: int):
+        self.trolly_num = trolly_num
+
+    def add_product(self, product: Product):
+        Trolly.trolly_list.append(product)
+     
+    def delate_product(self, barcod: int):
+        for item.barcode in Trolly.trolly_list:
+            if item.barcode == barcode:
+                Trolly.trolly_list.remove(item)
+>>>>>>> 738c10855e5b2b8f43564f6c15c09f2c219c0163
     
     def __init__(self, trolly_number: int):
         self.trolly_number = trolly_number
@@ -44,6 +58,7 @@ class Trolly:
         for item.barcode in Trolly.trolly_list:
             if item.barcode == barcode:
                 Trolly.trolly_list.remove(item.barcode)
+
 
 class Shelf:
     """Shelf Class
@@ -64,7 +79,16 @@ class Shelf:
             json.dump(storage, f)
 
     def remove(self, item: Product):
+<<<<<<< HEAD
         pass
+=======
+        with open("Compartment.json", "w") as f:
+            storage = json.load(f)
+        
+        for key in storage.values():
+            # for key
+
+>>>>>>> 738c10855e5b2b8f43564f6c15c09f2c219c0163
 
 class Bin:
     """Bin Class
