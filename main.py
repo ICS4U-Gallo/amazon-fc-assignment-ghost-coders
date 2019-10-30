@@ -19,13 +19,6 @@ class Product:
         """
         self.barcode = barcode
 
-
-    def on_trolly(self, trolly: Trolly):
-        """Returns the trolly number
-        Places the product on a trolly.
-        """
-        pass
-
     def on_shelf(self, shelf: Shelf, compartment: shelf.compartment):
         """Removes product from trolly and places it into a bin, with a shelf
         and compartment number
@@ -38,7 +31,7 @@ class Product:
         """
         pass
     
-    def in_bin(self, bin: Bin, product: Product):
+    def in_bin(self, bin: Bin, : Product):product
         """
         Places the products ordered onto the bin
         """
@@ -46,18 +39,24 @@ class Product:
 
 
 class Trolly:
-    """Trolly Class
-    Carries product from truck to shelf and compartment
     """
+    Placed product into a trolly with a trolly number. 
+    """
+    trolly_list = []
+    def __init__(self, trolly_num: int):
+        self.trolly_num = trolly_num
+
+    def add_product(self, product: Product):
+        Trolly.trolly_list.append(product)
+     
+    def delate_product(self, barcod: int):
+        for item.barcode in Trolly.trolly_list:
+            if item.barcode == barcode:
+                Trolly.trolly_list.remove(item)
     
-    def __init__(self):
-        self.item = []
+    def get_trolly(self):
+        return Trolly.trolly_list
 
-    def add(self,item):
-        self.item.append(item)
-
-    def remove(self, item):
-        self.item.remove(item)
 
 class Shelf:
     """Shelf Class
