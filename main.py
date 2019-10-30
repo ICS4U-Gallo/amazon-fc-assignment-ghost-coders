@@ -29,9 +29,21 @@ class Product:
 
 
 class Trolly:
-    """Trolly Class
-    Carries product from truck to shelf and compartment
     """
+    Placed product into a trolly with a trolly number. 
+    """
+    trolly_list = []
+    def __init__(self, trolly_num: int):
+        self.trolly_num = trolly_num
+
+    def add_product(self, product: Product):
+        Trolly.trolly_list.append(product)
+     
+    def delate_product(self, barcod: int):
+        for item.barcode in Trolly.trolly_list:
+            if item.barcode == barcode:
+                Trolly.trolly_list.remove(item)
+    
     def __init__(self):
         self.trolly = []
 
