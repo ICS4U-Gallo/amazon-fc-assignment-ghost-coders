@@ -22,6 +22,8 @@ class Product:
     def __init__(self, barcode: int):
         """
         Creates the product (barcode)
+        Args:
+            barcode: the item's barcode
         """
         self.barcode = barcode
 
@@ -78,7 +80,6 @@ class Bin:
 class Packaging:
     """Packaging Class
     Prepares the products (the order) for shipment to customer
-
     Attributes:
         box_type = small, medium, large, fragile
         address = where product is sent to
@@ -89,12 +90,9 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-
-
-
+    
 def main():
     pass
-
 
 if __name__ == "__main__":
     main()
