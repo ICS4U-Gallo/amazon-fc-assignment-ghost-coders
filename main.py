@@ -23,7 +23,7 @@ class Product:
         """
         Creates the product (barcode)
         Args:
-            barcode: the item's barcode
+            barcode: int
         """
         self.barcode = barcode
 
@@ -32,7 +32,6 @@ class Trolly:
     """Trolly Class
     Carries product from truck to shelf and compartment
     """
-    
     def __init__(self):
         self.trolly = []
 
@@ -41,6 +40,7 @@ class Trolly:
 
     def remove(self, item: Product):
         self.trolly.remove(item.barcode)
+
 
 class Shelf:
     """Shelf Class
@@ -64,7 +64,9 @@ class Shelf:
         with open("Compartment.json", "w") as f:
             storage = json.load(f)
         
-        
+        for key in storage.values():
+            # for key
+
 
 class Bin:
     """Bin Class
