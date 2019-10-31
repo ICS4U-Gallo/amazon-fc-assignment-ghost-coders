@@ -32,28 +32,16 @@ class Trolly:
     """
     Placed product onto trolly to be moved onto shelf
     """
-<<<<<<< HEAD
     trolly_list = []
-=======
-    def __init__(self):
-        pass
->>>>>>> a0de59f5938b7b5045d5cc780695a0338db7f581
 
     def add(self, product: Product):
         trolly_list.append(Product)
      
-<<<<<<< HEAD
     def delate_product(self, items: Product):
         for code in Trolly.trolly_list:
             if code == items.barcode:
                 Trolly.trolly_list.remove(code)
     
-=======
-    def remove(self, product: Product):
-        for barcode in trolly_list:
-            if product.barcode == barcode:
-                trolly_list.remove(item)
->>>>>>> a0de59f5938b7b5045d5cc780695a0338db7f581
 
 
 # class Shelf:
@@ -78,18 +66,12 @@ class Trolly:
 #         with open("Compartment.json", "w") as f:
 #             storage = json.load(f)
         
-<<<<<<< Updated upstream
         for key, value in storage.items():
             for key, value in value.items():
                 for barcode in value:
                     if item.barcode in value:
                         value.remove(item.barcode)
-=======
-<<<<<<< HEAD
-#         for key in storage.values():
-#             # for key
-#             pass
->>>>>>> Stashed changes
+
 
 
 class Bin:
@@ -134,8 +116,6 @@ def main():
     pants = Product(98765)
 
     trolly = Trolly()
-<<<<<<< Updated upstream
-=======
     package_1 = Product("AMZ001")
     package_2 = Product("AMZ002")
     
@@ -145,7 +125,6 @@ def main():
     trolly.delate_product(package_1)
     print(Trolly.trolly_list)
     
-=======
         for key, value in storage.items():
             for key, value in value.items():
                 for barcode in value:
@@ -195,14 +174,10 @@ def main():
     pants = Product(98765)
 
     trolly = Trolly()
->>>>>>> Stashed changes
 
     trolly.add(shirt)
 
 
-<<<<<<< Updated upstream
-=======
->>>>>>> a0de59f5938b7b5045d5cc780695a0338db7f581
 >>>>>>> Stashed changes
 
     
