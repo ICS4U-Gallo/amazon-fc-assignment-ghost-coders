@@ -111,7 +111,12 @@ class Packaging:
 
     
 def main():
-    pass
+    shirt = Product(12345)
+    pants = Product(98765)
+
+    trolly = Trolly()
+
+    
 
 if __name__ == "__main__":
     main()
