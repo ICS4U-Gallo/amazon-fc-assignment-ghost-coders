@@ -231,7 +231,7 @@ def main():
     # packaging = Packaging()
 
     trolly.add(shirt)
-    shelf.add("a", 1, shirt)
+    shelf.add("A", 1, shirt)
 
     print(shirt)
     print(pants)
