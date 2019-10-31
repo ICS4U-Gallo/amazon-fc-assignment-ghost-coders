@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from main import *
+from GUI import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
