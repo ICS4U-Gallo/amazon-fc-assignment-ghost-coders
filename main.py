@@ -61,10 +61,10 @@ class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self, shelf_num: str, compartment_num: int):
-        self.shelf_num = shelf_num
-        self.compartment_num = compartment_num
-
+    def __init__(self):#, shelf_num: str, compartment_num: int):
+        # self.shelf_num = shelf_num
+        # self.compartment_num = compartment_num
+        pass
 
     def add(self, shelf_num: str, compartment_num: int, product: Product):
         with open("Compartment.json", 'r') as f:
@@ -124,8 +124,7 @@ class Packaging:
         truck = transportation, license plate
     """
 
-    def __init__(self, bin: Bin, box_type: str, address: str, truck: str):
-        self.bin = bin
+    def __init__(self, box_type: str, address: str, truck: str):
         self.box_type = box_type
         self.address = address
         self.truck = truck
@@ -139,6 +138,16 @@ def main():
     pants = Product(98765)
 
     trolly = Trolly()
+    shelf = Shelf()
+    bin = Bin()
+    # packaging = Packaging()
+
+    trolly.add(shirt)
+    trolly.remove(shirt)
+    shelf.add("a", 1, shirt)
+    # shelf.remove(shirt)
+    # bin.add(shirt)
+    # packaging.add()
 
     print(shirt)
     print(pants)
