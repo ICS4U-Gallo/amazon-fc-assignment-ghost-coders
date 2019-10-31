@@ -36,13 +36,23 @@ class Trolly:
         pass
 
     def add(self, product: Product):
-        trolly_list.append(Product)
+        with open("trolly.json", "r") as f:
+            storage = json.load(f)
+
+        storage.append(product)
+
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
      
     def remove(self, product: Product):
-        for barcode in trolly_list:
-            if product.barcode == barcode:
-                trolly_list.remove(item)
-
+        with open("trolly.json", "r") as f:
+            storage = json.load(f)
+        
+        if product.barcode in storage:
+             storage.remove(product.barcode)
+            
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
 
 class Shelf:
     """Shelf Class
@@ -53,24 +63,27 @@ class Shelf:
         self.compartment_num = compartment_num
 
 
-    def add(self, shelf_num: str, compartment_num: int, item: Product):
+    def add(self, shelf_num: str, compartment_num: int, product: Product):
         with open("Compartment.json", 'r') as f:
             storage = json.load(f)
         
-        storage[shelf_num][compartment_num].append(item.barcode)
+        storage[shelf_num][compartment_num].append(product.barcode)
 
         with open("Compartment.json", "w") as f:
             json.dump(storage, f)
 
-    def remove(self, item: Product):
-        with open("Compartment.json", "w") as f:
+    def remove(self, product: Product):
+        with open("Compartment.json", "r") as f:
             storage = json.load(f)
         
         for key, value in storage.items():
             for key, value in value.items():
                 for barcode in value:
-                    if item.barcode in value:
-                        value.remove(item.barcode)
+                    if product.barcode in value:
+                        value.remove(product.barcode)
+        
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
 
 
 class Bin:
@@ -80,16 +93,22 @@ class Bin:
     def __init__(self, bin_num: int):
         self.bin_num = bin_num
 
-    def add(self, bin_num: int, item: Product):
-        if bin_num not in Bin.bin_dict.keys():
-            Bin.bin_dict[bin_num] = item
-        else:
-            Bin.bin_dict[bin_num] = item
+    def add(self, bin: Bin, product: Product):
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        storage[bin_num].append(product.barcode)
+
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
 
     def remove(self, item: Product):
-        for value in Bin.bin_dict.values():
-            if value == item:
-                value = ""
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        for key, value in storage.items():
+            for bin_list in value:
+                bin_list.clear()
 
 
 class Packaging:
