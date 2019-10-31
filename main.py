@@ -124,13 +124,16 @@ class Packaging:
         truck = transportation, license plate
     """
 
+    order = Bin
+
     def __init__(self, box_type: str, address: str, truck: str):
         self.box_type = box_type
         self.address = address
         self.truck = truck
     
     def __str__(self):
-        return "The product(s) has been shipped"
+        return f"""The product(s) has been shipped.
+        {order}"""
 
     
 def main():
