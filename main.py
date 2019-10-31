@@ -42,7 +42,7 @@ class Trolly:
         with open("trolly.json", "r") as f:
             storage = json.load(f)
 
-        storage.append(product)
+        storage.append(product.barcode)
 
         with open("trolly.json", "w") as f:
             json.dump(storage, f)
@@ -124,7 +124,8 @@ class Packaging:
         truck = transportation, license plate
     """
 
-    def __init__(self, box_type: str, address: str, truck: str):
+    def __init__(self, bin: Bin, box_type: str, address: str, truck: str):
+        self.bin = bin
         self.box_type = box_type
         self.address = address
         self.truck = truck
@@ -141,6 +142,7 @@ def main():
 
     print(shirt)
     print(pants)
+    print(trolly)
 
 
 if __name__ == "__main__":
