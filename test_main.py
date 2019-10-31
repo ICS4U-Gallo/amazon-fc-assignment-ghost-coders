@@ -14,15 +14,18 @@ Trolly
 def test_can_puton_trolly():
   Toothbrash = Product(1)
   trolly = Trolly()
-  trolly.add_product(Toothbrash)
-  assert Trolly.trolly_list == [1]
+  trolly.add(Toothbrash)
+  with open("trolly.json", "r") as f:
+    storage = json.load(f)
+  assert storage == [1]
 
 def test_can_takeoff_trolly():
   Toothbrash = Product(1)
   trolly = Trolly()
-  trolly.add_product(Toothbrash)
-  trolly.delete_product(Toothbrash)
-  assert Trolly.trolly_list == []
+  trolly.remove(Toothbrash)
+  with open("trolly.json", "r") as f:
+    storage = json.load(f)
+  assert storage == []
 
 """
 Shelf
