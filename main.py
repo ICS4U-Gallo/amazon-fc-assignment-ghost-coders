@@ -125,8 +125,7 @@ class Packaging:
         truck = transportation, license plate
     """
 
-    def __init__(self, bin: Bin, box_type: str, address: str, truck: str):
-        self.bin = bin
+    def __init__(self, box_type: str, address: str, truck: str):
         self.box_type = box_type
         self.address = address
         self.truck = truck

@@ -69,3 +69,12 @@ def test_can_takeoff_bin():
   with open("bin.json", "r") as f:
     storage = json.load(f)
   assert storage == []
+
+  """
+  Packaging
+  """
+  def test_can_create_package():
+    package_01 = Packaging("Plastic", "123 Street", "Truck 01")
+    assert package_01.box_type == "Plastic"
+    assert package_01.address == "123 Street"
+    assert package_01.truck == "Truck 01"
