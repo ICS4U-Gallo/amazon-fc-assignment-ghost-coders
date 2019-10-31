@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
-from GUI_2 import *
+from GUI_final import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -8,33 +8,25 @@ class Ui_MainWindow(object):
         MainWindow.resize(1124, 672)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(60, 200, 481, 51))
-        self.lineEdit.setObjectName("lineEdit")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(100, 200, 241, 211))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_5.setGeometry(QtCore.QRect(250, 450, 641, 131))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(790, 200, 241, 211))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(460, 200, 241, 211))
+        self.pushButton_3.setObjectName("pushButton_3")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 0, 711, 191))
+        self.label.setGeometry(QtCore.QRect(390, 50, 531, 101))
         font = QtGui.QFont()
-        font.setFamily("Sitka Heading")
-        font.setPointSize(28)
+        font.setFamily("Sitka")
+        font.setPointSize(36)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.Enter = QtWidgets.QPushButton(self.centralwidget)
-        self.Enter.setGeometry(QtCore.QRect(160, 310, 261, 81))
-        font = QtGui.QFont()
-        font.setFamily("Sitka")
-        font.setPointSize(28)
-        self.Enter.setFont(font)
-        self.Enter.setObjectName("Enter")
-        self.listView = QtWidgets.QListView(self.centralwidget)
-        self.listView.setGeometry(QtCore.QRect(680, 40, 411, 561))
-        self.listView.setObjectName("listView")
-        self.Continue = QtWidgets.QPushButton(self.centralwidget)
-        self.Continue.setGeometry(QtCore.QRect(150, 470, 271, 101))
-        font = QtGui.QFont()
-        font.setFamily("Sitka")
-        font.setPointSize(28)
-        self.Continue.setFont(font)
-        self.Continue.setObjectName("Continue")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1124, 26))
@@ -47,15 +39,14 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        def enter_click(self):
-            pass
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Please Enter Product Barcode"))
-        self.Enter.setText(_translate("MainWindow", "Enter"))
-        self.Continue.setText(_translate("MainWindow", "Continue"))
+        self.pushButton.setText(_translate("MainWindow", "Small Box"))
+        self.pushButton_5.setText(_translate("MainWindow", "Fragile"))
+        self.pushButton_2.setText(_translate("MainWindow", "Large Box"))
+        self.pushButton_3.setText(_translate("MainWindow", "Medium Box"))
+        self.label.setText(_translate("MainWindow", "Select Box Type"))
 
 
 if __name__ == "__main__":

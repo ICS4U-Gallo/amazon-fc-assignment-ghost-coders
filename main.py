@@ -87,14 +87,21 @@ class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
-    def __init__(self, number: int):
-        self.number = number
+    bin_dict = {}
+
+    def __init__(self, bin_num: int):
+        self.bin_num = bin_num
 
     def add(self, bin_num: int, item: Product):
-        pass
+        if bin_num not in Bin.bin_dict.keys():
+            Bin.bin_dict[bin_num] = item
+        else:
+            Bin.bin_dict[bin_num] = item
 
     def remove(self, item: Product):
-        pass
+        for value in Bin.bin_dict.values():
+            if value == item:
+                value = ""
 
 
 class Packaging:
@@ -110,9 +117,7 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-    
-    def shipment(self):
-        return "Product has been shipped."
+
     
 def main():
     pass
