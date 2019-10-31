@@ -35,10 +35,10 @@ class Trolly:
     def __init__(self):
         pass
 
-    def add_product(self, product: Product):
+    def add(self, product: Product):
         trolly_list.append(Product)
      
-    def delete_product(self, product: Product):
+    def remove(self, product: Product):
         for barcode in trolly_list:
             if product.barcode == barcode:
                 trolly_list.remove(item)
@@ -116,7 +116,9 @@ def main():
 
     trolly = Trolly()
 
-    
+    trolly.add(shirt)
+
+
 
 if __name__ == "__main__":
     main()
