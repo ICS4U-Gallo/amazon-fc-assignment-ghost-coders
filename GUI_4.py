@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from GUI_4 import *
+from main import *
+from GUI_box_type import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -13,7 +14,7 @@ class Ui_MainWindow(object):
         font.setFamily("Sitka")
         font.setPointSize(36)
         self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
+        self.pushButton.setObjectName("Send TO Packaging")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1124, 26))

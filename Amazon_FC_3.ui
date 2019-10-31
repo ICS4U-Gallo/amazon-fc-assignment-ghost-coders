@@ -14,23 +14,62 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>190</y>
-      <width>701</width>
-      <height>211</height>
+      <x>30</x>
+      <y>150</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>791</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Sitka</family>
-      <pointsize>36</pointsize>
+      <pointsize>30</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>TO PACKAGING</string>
+     <string>Enter the Barcode that will go to the bin</string>
+    </property>
+   </widget>
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>150</y>
+      <width>461</width>
+      <height>461</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Enter">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>220</y>
+      <width>201</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Enter</string>
     </property>
    </widget>
   </widget>
