@@ -33,25 +33,17 @@ class Trolly:
     Placed product into a trolly with a trolly number. 
     """
     trolly_list = []
-    def __init__(self, trolly_num: int):
-        self.trolly_num = trolly_num
+
+    def __init__(self):
+        pass
 
     def add_product(self, product: Product):
-        Trolly.trolly_list.append(product)
+        trolly_list.append(Product)
      
-    def delate_product(self, barcod: int):
-        for item.barcode in Trolly.trolly_list:
-            if item.barcode == barcode:
-                Trolly.trolly_list.remove(item)
-    
-    def __init__(self):
-        self.trolly = []
-
-    def add(self,item: Product):
-        self.trolly.append(item.barcode)
-
-    def remove(self, item: Product):
-        self.trolly.remove(item.barcode)
+    def delete_product(self, product: Product):
+        for barcode in trolly_list:
+            if product.barcode == barcode:
+                trolly_list.remove(item)
 
 
 class Shelf:
