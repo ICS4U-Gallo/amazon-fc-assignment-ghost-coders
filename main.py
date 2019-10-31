@@ -26,6 +26,9 @@ class Product:
             barcode: int
         """
         self.barcode = barcode
+    
+    def __str__(self):
+        return f"{self.barcode}"
 
 
 class Trolly:
@@ -43,6 +46,7 @@ class Trolly:
                 Trolly.trolly_list.remove(code)
     
 
+<<<<<<< HEAD
 
 # class Shelf:
 #     """Shelf Class
@@ -52,6 +56,31 @@ class Trolly:
 #         self.shelf_num = shelf_num
 #         self.compartment_num = compartment_num
 
+=======
+        storage.append(product.barcode)
+
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
+     
+    def remove(self, product: Product):
+        with open("trolly.json", "r") as f:
+            storage = json.load(f)
+        
+        if product.barcode in storage:
+             storage.remove(product.barcode)
+            
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
+
+class Shelf:
+    """Shelf Class
+    Holds the product in a specific shelf and compartment location (number)
+    """
+    def __init__(self):#, shelf_num: str, compartment_num: int):
+        # self.shelf_num = shelf_num
+        # self.compartment_num = compartment_num
+        pass
+>>>>>>> 08148575024c1d804af10506507dbf9dc03cdaea
 
 #     def add(self, shelf_num: str, compartment_num: int, item: Product):
 #         with open("Compartment.json", 'r') as f:
@@ -78,9 +107,10 @@ class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
-    def __init__(self, bin_num: int):
-        self.bin_num = bin_num
+    def __init__(self):
+        pass
 
+<<<<<<< HEAD
     def add(self, bin_num: int, item: Product):
         if bin_num not in Bin.bin_dict.keys():
             Bin.bin_dict[bin_num] = item
@@ -149,6 +179,25 @@ class Bin:
         for value in Bin.bin_dict.values():
             if value == item:
                 value = ""
+=======
+    def add(self, product: Product):
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        storage.append(product.barcode)
+
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
+
+    def remove(self, product: Product):
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        storage.clear()
+
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
+>>>>>>> 08148575024c1d804af10506507dbf9dc03cdaea
 
 
 class Packaging:
@@ -160,13 +209,16 @@ class Packaging:
         truck = transportation, license plate
     """
 
+    order = Bin
+
     def __init__(self, box_type: str, address: str, truck: str):
         self.box_type = box_type
         self.address = address
         self.truck = truck
     
     def __str__(self):
-        return "The product(s) has been shipped"
+        return f"""The product(s) has been shipped.
+        {order}"""
 
     
 def main():
@@ -174,9 +226,16 @@ def main():
     pants = Product(98765)
 
     trolly = Trolly()
+    shelf = Shelf()
+    bin = Bin()
+    # packaging = Packaging()
 
     trolly.add(shirt)
+    shelf.add("a", 1, shirt)
 
+    print(shirt)
+    print(pants)
+    print(trolly)
 
 >>>>>>> Stashed changes
 
