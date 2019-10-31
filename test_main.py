@@ -52,4 +52,12 @@ def test_can_create_bin():
 def test_can_puton_bin():
   Toothbrash = Product(1)
   Bin_num1 = Bin(1)
+  Bin_num1.add(1, Toothbrash)
+  assert Bin_num1.bin_dict == {1: 1}
 
+def test_can_takeoff_bin():
+  Toothbrash = Product(1)
+  Bin_num1 = Bin(1)
+  Bin_num1.add(1, Toothbrash)
+  Bin_num1.remove(Toothbrash)
+  assert Bin_num1.bin_dict == {1: ""}

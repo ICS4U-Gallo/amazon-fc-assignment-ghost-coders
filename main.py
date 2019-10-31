@@ -84,14 +84,15 @@ class Bin:
 
     def add(self, bin_num: int, item: Product):
         if bin_num not in Bin.bin_dict.keys():
-            Bin.bin_dict[bin_num] = item
+            Bin.bin_dict[bin_num] = item.barcode
         else:
-            Bin.bin_dict[bin_num] = item
+            Bin.bin_dict[bin_num] = item.barcode
 
     def remove(self, item: Product):
         for value in Bin.bin_dict.values():
-            if value == item:
-                value = ""
+            if value == item.barcode:
+                value = 
+
 
 
 class Packaging:
