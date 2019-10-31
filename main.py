@@ -30,20 +30,20 @@ class Product:
 
 class Trolly:
     """
-    Placed product into a trolly with a trolly number. 
+    Placed product onto trolly to be moved onto shelf
     """
     trolly_list = []
-    def __init__(self, trolly_num: int):
-        self.trolly_num = trolly_num
+
+    def __init__(self):
+        pass
 
     def add_product(self, product: Product):
         Trolly.trolly_list.append(product.barcode)
      
-    def delate_product(self, barcode: int, item: Product):
-        for code in Trolly.trolly_list:
-            if code == barcode:
-                Trolly.trolly_list.remove(code)
-    
+    def delete_product(self, product: Product):
+        for barcode in Trolly.trolly_list:
+            if product.barcode in barcode:
+                Trolly.trolly_list.remove(product.barcode)
 
 
 class Shelf:
@@ -68,9 +68,11 @@ class Shelf:
         with open("Compartment.json", "w") as f:
             storage = json.load(f)
         
-        for key in storage.values():
-            # for key
-            pass
+        for key, value in storage.items():
+            for key, value in value.items():
+                for barcode in value:
+                    if item.barcode in value:
+                        value.remove(item.barcode)
 
 
 class Bin:
@@ -91,7 +93,7 @@ class Bin:
     def remove(self, item: Product):
         for value in Bin.bin_dict.values():
             if value == item.barcode:
-                value = 
+                value = ""
 
 
 
