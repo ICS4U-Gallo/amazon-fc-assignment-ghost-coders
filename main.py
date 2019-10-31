@@ -26,25 +26,36 @@ class Product:
             barcode: int
         """
         self.barcode = barcode
+    
+    def __str__(self):
+        return f"{self.barcode}"
 
 
 class Trolly:
     """
-    Placed product into a trolly with a trolly number. 
+    Placed product onto trolly to be moved onto shelf
     """
-    trolly_list = []
-
     def __init__(self):
         pass
 
-    def add_product(self, product: Product):
-        trolly_list.append(Product)
-     
-    def delete_product(self, product: Product):
-        for barcode in trolly_list:
-            if product.barcode == barcode:
-                trolly_list.remove(item)
+    def add(self, product: Product):
+        with open("trolly.json", "r") as f:
+            storage = json.load(f)
 
+        storage.append(product.barcode)
+
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
+     
+    def remove(self, product: Product):
+        with open("trolly.json", "r") as f:
+            storage = json.load(f)
+        
+        if product.barcode in storage:
+             storage.remove(product.barcode)
+            
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
 
 class Shelf:
     """Shelf Class
@@ -55,45 +66,54 @@ class Shelf:
         self.compartment_num = compartment_num
 
 
-    def add(self, shelf_num: str, compartment_num: int, item: Product):
+    def add(self, shelf_num: str, compartment_num: int, product: Product):
         with open("Compartment.json", 'r') as f:
             storage = json.load(f)
         
-        storage[shelf_num][compartment_num].append(item.barcode)
+        storage[shelf_num][compartment_num].append(product.barcode)
 
         with open("Compartment.json", "w") as f:
             json.dump(storage, f)
 
-    def remove(self, item: Product):
-        with open("Compartment.json", "w") as f:
+    def remove(self, product: Product):
+        with open("Compartment.json", "r") as f:
             storage = json.load(f)
         
         for key, value in storage.items():
             for key, value in value.items():
                 for barcode in value:
-                    if item.barcode in value:
-                        value.remove(item.barcode)
+                    if product.barcode in value:
+                        value.remove(product.barcode)
+        
+        with open("trolly.json", "w") as f:
+            json.dump(storage, f)
 
 
 class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
-    bin_dict = {}
+    def __init__(self):
+        pass
 
-    def __init__(self, bin_num: int):
-        self.bin_num = bin_num
+    def add(self, product: Product):
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        storage.append(product.barcode)
 
-    def add(self, bin_num: int, item: Product):
-        if bin_num not in Bin.bin_dict.keys():
-            Bin.bin_dict[bin_num] = item
-        else:
-            Bin.bin_dict[bin_num] = item
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
 
-    def remove(self, item: Product):
-        for value in Bin.bin_dict.values():
-            if value == item:
-                value = ""
+    def remove(self, product: Product):
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+        
+        storage.clear()
+
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
+
 
 
 class Packaging:
@@ -105,14 +125,26 @@ class Packaging:
         truck = transportation, license plate
     """
 
-    def __init__(self, box_type: str, address: str, truck: str):
+    def __init__(self, bin: Bin, box_type: str, address: str, truck: str):
+        self.bin = bin
         self.box_type = box_type
         self.address = address
         self.truck = truck
+    
+    def __str__(self):
+        return "The product(s) has been shipped"
 
     
 def main():
-    pass
+    shirt = Product(12345)
+    pants = Product(98765)
+
+    trolly = Trolly()
+
+    print(shirt)
+    print(pants)
+    print(trolly)
+
 
 if __name__ == "__main__":
     main()
