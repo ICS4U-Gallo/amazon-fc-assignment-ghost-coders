@@ -146,11 +146,7 @@ def main():
     # packaging = Packaging()
 
     trolly.add(shirt)
-    trolly.remove(shirt)
     shelf.add("a", 1, shirt)
-    # shelf.remove(shirt)
-    # bin.add(shirt)
-    # packaging.add()
 
     print(shirt)
     print(pants)
