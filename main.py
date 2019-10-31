@@ -42,7 +42,7 @@ class Trolly:
     def delate_product(self, barcode: int, item: Product):
         for code in Trolly.trolly_list:
             if code == barcode:
-                Trolly.trolly_list.remove(item.code)
+                Trolly.trolly_list.remove(code)
     
 
 
