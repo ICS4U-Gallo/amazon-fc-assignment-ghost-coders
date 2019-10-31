@@ -32,8 +32,6 @@ class Trolly:
     """
     Placed product onto trolly to be moved onto shelf
     """
-    trolly_list = []
-
     def __init__(self):
         pass
 
@@ -79,8 +77,6 @@ class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
-    bin_dict = {}
-
     def __init__(self, bin_num: int):
         self.bin_num = bin_num
 
@@ -109,6 +105,9 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
+    
+    def __str__(self):
+        return "The product(s) has been shipped"
 
     
 def main():
