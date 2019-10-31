@@ -30,7 +30,7 @@ class Product:
 
 class Trolly:
     """
-    Placed product into a trolly with a trolly number. 
+    Placed product onto trolly to be moved onto shelf
     """
     trolly_list = []
 
