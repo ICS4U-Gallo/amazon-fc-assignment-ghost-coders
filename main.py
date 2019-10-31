@@ -37,12 +37,12 @@ class Trolly:
         self.trolly_num = trolly_num
 
     def add_product(self, product: Product):
-        Trolly.trolly_list.append(product)
+        Trolly.trolly_list.append(product.barcode)
      
     def delate_product(self, barcode: int, item: Product):
-        for item.barcode in Trolly.trolly_list:
-            if item.barcode == barcode:
-                Trolly.trolly_list.remove(item.barcode)
+        for code in Trolly.trolly_list:
+            if code == barcode:
+                Trolly.trolly_list.remove(item.code)
     
 
 
@@ -79,8 +79,8 @@ class Bin:
     """
     bin_dict = {}
 
-    def __init__(self, number: int):
-        self.number = number
+    def __init__(self, bin_num: int):
+        self.bin_num = bin_num
 
     def add(self, bin_num: int, item: Product):
         if bin_num not in Bin.bin_dict.keys():
