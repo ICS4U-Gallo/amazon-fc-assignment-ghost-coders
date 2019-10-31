@@ -26,6 +26,9 @@ class Product:
             barcode: int
         """
         self.barcode = barcode
+    
+    def __str__(self):
+        return f"{self.barcode}"
 
 
 class Trolly:
@@ -90,25 +93,26 @@ class Bin:
     """Bin Class
     Collects the products ordered and carries it to the packaging station
     """
-    def __init__(self, bin_num: int):
-        self.bin_num = bin_num
+    def __init__(self):
+        pass
 
-    def add(self, bin: Bin, product: Product):
+    def add(self, product: Product):
         with open("bin.json", "r") as f:
             storage = json.load(f)
         
-        storage[bin_num].append(product.barcode)
+        storage.append(product.barcode)
 
         with open("bin.json", "w") as f:
             json.dump(storage, f)
 
-    def remove(self, item: Product):
+    def remove(self, product: Product):
         with open("bin.json", "r") as f:
             storage = json.load(f)
         
-        for key, value in storage.items():
-            for bin_list in value:
-                bin_list.clear()
+        storage.clear()
+
+        with open("bin.json", "w") as f:
+            json.dump(storage, f)
 
 
 class Packaging:
@@ -135,8 +139,8 @@ def main():
 
     trolly = Trolly()
 
-    trolly.add(shirt)
-
+    print(shirt)
+    print(pants)
 
 
 if __name__ == "__main__":
