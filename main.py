@@ -4,11 +4,12 @@ import json
 Product
 ====
 Barcode -> object
-Trolly number 
+Trolly number
 Bin number
 Shelf number
 Compartment number
 """
+
 
 class Product:
     """
@@ -25,7 +26,7 @@ class Product:
             barcode: str
         """
         self.barcode = barcode
-    
+
     def __str__(self):
         return f"{self.barcode}"
 
@@ -45,16 +46,17 @@ class Trolly:
 
         with open("trolly.json", "w") as f:
             json.dump(storage, f)
-     
+
     def remove(self, product: Product):
         with open("trolly.json", "r") as f:
             storage = json.load(f)
-        
+
         if product.barcode in storage:
-             storage.remove(product.barcode)
-            
+            storage.remove(product.barcode)
+
         with open("trolly.json", "w") as f:
             json.dump(storage, f)
+
 
 class Shelf:
     """Shelf Class
@@ -63,11 +65,10 @@ class Shelf:
     def __init__(self):
         pass
 
-
     def add(self, shelf_num: str, compartment_num: int, product: Product):
         with open("Compartment.json", 'r') as f:
             storage = json.load(f)
-        
+
         storage[shelf_num][compartment_num].append(product.barcode)
 
         with open("Compartment.json", "w") as f:
@@ -76,13 +77,13 @@ class Shelf:
     def remove(self, product: Product):
         with open("Compartment.json", "r") as f:
             storage = json.load(f)
-        
+
         for value in storage.values():
             for value2 in value.values():
                 for barcode in value2:
                     if product.barcode == barcode:
                         value2.remove(product.barcode)
-        
+
         with open("Compartment.json", "w") as f:
             json.dump(storage, f)
 
@@ -97,7 +98,7 @@ class Bin:
     def add(self, product: Product):
         with open("bin.json", "r") as f:
             storage = json.load(f)
-        
+
         storage.append(product.barcode)
 
         with open("bin.json", "w") as f:
@@ -106,12 +107,11 @@ class Bin:
     def remove(self, product: Product):
         with open("bin.json", "r") as f:
             storage = json.load(f)
-        
+
         storage.clear()
 
         with open("bin.json", "w") as f:
             json.dump(storage, f)
-
 
 
 class Packaging:
@@ -127,16 +127,16 @@ class Packaging:
         self.box_type = box_type
         self.address = address
         self.truck = truck
-    
+
     def __str__(self):
         return "The order has been shipped"
         with open("bin.json", "r") as f:
             storage = json.load(f)
-        
+
         return f"""The order has been shipped.
         {str(storage)}"""
 
-    
+
 def main():
     shirt = Product(12345)
     pants = Product(98765)
