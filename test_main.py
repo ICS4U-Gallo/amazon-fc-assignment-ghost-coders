@@ -71,37 +71,23 @@ Shelf
 """
 
 
-def test_can_create_shelf():
-  Shelf_A = Shelf("A", "1")
-  assert Shelf_A.shelf_num == "A"
-  assert Shelf_A.compartment_num == "1"
-
-  Shelf_B = Shelf("B", "4")
-  assert Shelf_B.shelf_num == "B"
-  assert Shelf_B.compartment_num == "4"
-
-  Shelf_C = Shelf("C", "6")
-  assert Shelf_C.shelf_num == "C"
-  assert Shelf_C.compartment_num == "6"
-
-
 def test_can_puton_shelf():
   Toothbrash = Product(1)
-  Shelf_A = Shelf("A", "1")
+  Shelf_A = Shelf()
   Shelf_A.add("A", "1", Toothbrash)
   with open("Compartment.json", 'r') as f:
     storage = json.load(f)
   assert storage["A"]["1"] == [1]
 
   Fork = Product(2)
-  Shelf_B = Shelf("B", "4")
+  Shelf_B = Shelf()
   Shelf_B.add("B", "4", Fork)
   with open("Compartment.json", 'r') as f:
     storage = json.load(f)
   assert storage["B"]["4"] == [2]
 
   Bag = Product(35)
-  Shelf_C = Shelf("C", "6")
+  Shelf_C = Shelf()
   Shelf_C.add("C", "6", Bag)
   with open("Compartment.json", 'r') as f:
     storage = json.load(f)
@@ -110,21 +96,21 @@ def test_can_puton_shelf():
 
 def test_can_takeoff_shelf():
   Toothbrash = Product(1)
-  Shelf_A = Shelf("A", "1")
+  Shelf_A = Shelf()
   Shelf_A.remove(Toothbrash)
   with open("Compartment.json", "r") as f:
     storage = json.load(f)
   assert storage["A"]["1"] == []
 
   Fork = Product(2)
-  Shelf_B = Shelf("B", "4")
+  Shelf_B = Shelf()
   Shelf_B.remove(Fork)
   with open("Compartment.json", "r") as f:
     storage = json.load(f)
   assert storage["B"]["4"] == []
 
   Bag = Product(35)
-  Shelf_C = Shelf("C", "6")
+  Shelf_C = Shelf()
   Shelf_C.remove(Bag)
   with open("Compartment.json", "r") as f:
     storage = json.load(f)
@@ -186,17 +172,17 @@ def test_can_takeoff_bin():
 
 
 def test_can_create_package():
-  package_01 = Packaging("Plastic", "123 Street", "Truck 01")
-  assert package_01.box_type == "Plastic"
+  package_01 = Packaging("small", "123 Street", "Truck 01")
+  assert package_01.box_type == "small"
   assert package_01.address == "123 Street"
   assert package_01.truck == "Truck 01"
 
-  package_02 = Packaging("Iron", "9090 Street", "Truck 02")
-  assert package_01.box_type == "Iron"
-  assert package_01.address == "9090 Street"
-  assert package_01.truck == "Truck 02"
+  package_02 = Packaging("medium", "9090 Street", "Truck 02")
+  assert package_02.box_type == "medium"
+  assert package_02.address == "9090 Street"
+  assert package_02.truck == "Truck 02"
 
-  package_03 = Packaging("Paper", "487 Street", "Truck 03")
-  assert package_01.box_type == "Paper"
-  assert package_01.address == "487 Street"
-  assert package_01.truck == "Truck 03"
+  package_03 = Packaging("big", "487 Street", "Truck 03")
+  assert package_03.box_type == "big"
+  assert package_03.address == "487 Street"
+  assert package_03.truck == "Truck 03"
