@@ -1,5 +1,4 @@
 import json
-from typing import List
 
 """
 Product
@@ -79,10 +78,10 @@ class Shelf:
         with open("Compartment.json", "r") as f:
             storage = json.load(f)
         
-        for key, value in storage.items():
-            for key, value in value.items():
+        for value in storage.values():
+            for value in value.values():
                 for barcode in value:
-                    if product.barcode in value:
+                    if product.barcode == value:
                         value.remove(product.barcode)
         
         with open("trolly.json", "w") as f:
