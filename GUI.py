@@ -54,9 +54,12 @@ class GUI(object):
         
         model = QtGui.QStandardItemModel()
         self.listView.setModel(model)
+
         for barcode in barcodes:
             item = QtGui.QStandardItem(barcode)
             model.appendRow(item)
+        
+        self.item = Product(int(barcodes[0]))
         
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

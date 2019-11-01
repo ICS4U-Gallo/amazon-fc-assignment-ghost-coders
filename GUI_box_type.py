@@ -3,6 +3,7 @@ from main import *
 import json
 
 class GUI_box_type(object):
+    fragile_click_amount = 0
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 672)
@@ -50,6 +51,7 @@ class GUI_box_type(object):
         font.setPointSize(24)
         self.cont.setFont(font)
         self.cont.setObjectName("Continue")
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -70,21 +72,25 @@ class GUI_box_type(object):
 
     def small_box_click(self):
         self.small_box.setStyleSheet("background-color: rgb(0,200,0)")
-        self.medium_box.setStyleSheet("background-color: rgb(255,255,255)")
-        self.large_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.medium_box.setStyleSheet("background-color: rgb(220,220,220)")
+        self.large_box.setStyleSheet("background-color: rgb(220,220,220)")
     
     def median_box_click(self):
-        self.small_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.small_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.medium_box.setStyleSheet("background-color: rgb(0,200,0)")
-        self.large_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.large_box.setStyleSheet("background-color: rgb(220,220,220)")
     
     def large_box_click(self):
-        self.small_box.setStyleSheet("background-color: rgb(255,255,255)")
-        self.medium_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.small_box.setStyleSheet("background-color: rgb(220,220,220)")
+        self.medium_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.large_box.setStyleSheet("background-color: rgb(0,200,0)")
     
     def fragile_box_click(self):
-        self.fragile_box.setStyleSheet("background-color: rgb(0,200,0)")
+        GUI_box_type.fragile_click_amount += 1
+        if GUI_box_type.fragile_click_amount % 2 == 1:
+            self.fragile_box.setStyleSheet("background-color: rgb(0,200,0)")
+        else:
+            self.fragile_box.setStyleSheet("background-color: rgb(220,220,220)")
 
 if __name__ == "__main__":
     import sys

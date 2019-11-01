@@ -8,6 +8,8 @@ class GUI_2(object):
 
     def setupUi(self, MainWindow):
         self.item = GUI_2.item
+        self.shelf_num = "A"
+        self.compartment_num = 1
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 670)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -154,161 +156,161 @@ class GUI_2(object):
 
     def shelf_A_click(self):
         self.shelf_A.setStyleSheet("background-color: rgb(0,200,0)")
-        self.shelf_B.setStyleSheet("background-color: rgb(255,255,255)")
-        self.shelf_C.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_B.setStyleSheet("background-color: rgb(220,220,220)")
+        self.shelf_C.setStyleSheet("background-color: rgb(220,220,220)")
         self.shelf_num = "A"
         return self.shelf_num
 
     def shelf_B_click(self):
-        self.shelf_A.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_A.setStyleSheet("background-color: rgb(220,220,220)")
         self.shelf_B.setStyleSheet("background-color: rgb(0,200,0)")
-        self.shelf_C.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_C.setStyleSheet("background-color: rgb(220,220,220)")
         self.shelf_num = "B"
         return self.shelf_num
 
     def shelf_C_click(self):
-        self.shelf_A.setStyleSheet("background-color: rgb(255,255,255)")
-        self.shelf_B.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_A.setStyleSheet("background-color: rgb(220,220,220)")
+        self.shelf_B.setStyleSheet("background-color: rgb(220,220,220)")
         self.shelf_C.setStyleSheet("background-color: rgb(0,200,0)")
         self.shelf_num = "C"
         return self.shelf_num
 
     def compartment_1_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 1
         return self.compartment_num
         
     def compartment_2_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_2.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 2
         return self.compartment_num
 
     def compartment_3_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_3.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 3
         return self.compartment_num
 
     def compartment_4_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_4.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 4
         return self.compartment_num
 
     def compartment_5_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_5.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 5
         return self.compartment_num
 
     def compartment_6_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_6.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 6
         return self.compartment_num
 
     def compartment_7_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_7.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 7
         return self.compartment_num
 
     def compartment_8_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_8.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 8
         return self.compartment_num
 
     def compartment_9_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_9.setStyleSheet("background-color: rgb(0,200,0)")
-        self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_10.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_num = 9
         return self.compartment_num
 
     def compartment_10_click(self):
-        self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_3.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_4.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_5.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_6.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_7.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
-        self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_1.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_2.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_3.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_4.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_5.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_6.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_7.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_8.setStyleSheet("background-color: rgb(220,220,220)")
+        self.compartment_9.setStyleSheet("background-color: rgb(220,220,220)")
         self.compartment_10.setStyleSheet("background-color: rgb(0,200,0)")
         self.compartment_num = 10
         return self.compartment_num

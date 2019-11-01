@@ -22,20 +22,21 @@ class MainWindow(QtWidgets.QMainWindow):
     def startGUI2(self):
         self.gui_2.setupUi(self)
         self.gui_2.pushButton.clicked.connect(self.startGUI3)
-        self.show()
-        Product(self.gui_2.item[0])
+        self.show()        
+        Shelf.add(self.gui_2.shelf_num, self.gui_2.compartment_num, self.gui.item)
         
-    
+
     def startGUI3(self):
-        Shelf.add(self.gui_2.shelf_num, self.gui_2.compartment_num)
         self.gui_3.setupUi(self)
         self.gui_3.cont.clicked.connect(self.startGUI4)
         self.show()
-    
+        Shelf.remove(self.item)
+
     def startGUI4(self):
         self.gui_4.setupUi(self)
         self.gui_4.pushButton.clicked.connect(self.startGUIbox)
         self.show()
+        
     
     def startGUIbox(self):
         self.gui_box_type.setupUi(self)

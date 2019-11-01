@@ -10,7 +10,7 @@ class GUI_final(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(370, 210, 361, 211))
+        self.label.setGeometry(QtCore.QRect(360, 210, 390, 211))
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(40)
