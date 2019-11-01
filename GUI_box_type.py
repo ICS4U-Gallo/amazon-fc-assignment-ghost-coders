@@ -5,6 +5,7 @@ import json
 class GUI_box_type(object):
     fragile_click_amount = 0
     def setupUi(self, MainWindow):
+        self.box_type = " "
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 672)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -74,23 +75,32 @@ class GUI_box_type(object):
         self.small_box.setStyleSheet("background-color: rgb(0,200,0)")
         self.medium_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.large_box.setStyleSheet("background-color: rgb(220,220,220)")
-    
+        self.box_type = f"Small Box and {self.fragile_box_type}"
+        return self.box_type
+
     def median_box_click(self):
         self.small_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.medium_box.setStyleSheet("background-color: rgb(0,200,0)")
         self.large_box.setStyleSheet("background-color: rgb(220,220,220)")
-    
+        self.box_type = f"Median Box and {self.fragile_box_type}"
+        return self.box_type
+
     def large_box_click(self):
         self.small_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.medium_box.setStyleSheet("background-color: rgb(220,220,220)")
         self.large_box.setStyleSheet("background-color: rgb(0,200,0)")
-    
+        self.box_type = f"Large Box and {self.fragile_box_type}"
+        return self.box_type
+
     def fragile_box_click(self):
         GUI_box_type.fragile_click_amount += 1
         if GUI_box_type.fragile_click_amount % 2 == 1:
             self.fragile_box.setStyleSheet("background-color: rgb(0,200,0)")
+            self.fragile_box_type = "Fragile"
         else:
             self.fragile_box.setStyleSheet("background-color: rgb(220,220,220)")
+            self.fragile_box_type = "Not Fragile"
+        
 
 if __name__ == "__main__":
     import sys
