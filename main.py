@@ -131,7 +131,7 @@ class Packaging:
         self.truck = truck
     
     def __str__(self):
-        return "The product(s) has been shipped"
+        return "The order has been shipped"
 
     
 def main():
