@@ -50,10 +50,13 @@ class GUI_box_type(object):
         font.setPointSize(24)
         self.cont.setFont(font)
         self.cont.setObjectName("Continue")
-        
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.small_box.clicked.connect(self.small_box_click)
+        self.medium_box.clicked.connect(self.median_box_click)
+        self.large_box.clicked.connect(self.large_box_click)
+        self.fragile_box.clicked.connect(self.fragile_box_click)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -63,9 +66,25 @@ class GUI_box_type(object):
         self.large_box.setText(_translate("MainWindow", "Large Box"))
         self.medium_box.setText(_translate("MainWindow", "Medium Box"))
         self.label.setText(_translate("MainWindow", "Select Box Type"))
-        self.fragile_box_2.setText(_translate("MainWindow", "Continue"))
+        self.cont.setText(_translate("MainWindow", "Continue"))
 
-
+    def small_box_click(self):
+        self.small_box.setStyleSheet("background-color: rgb(0,200,0)")
+        self.medium_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.large_box.setStyleSheet("background-color: rgb(255,255,255)")
+    
+    def median_box_click(self):
+        self.small_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.medium_box.setStyleSheet("background-color: rgb(0,200,0)")
+        self.large_box.setStyleSheet("background-color: rgb(255,255,255)")
+    
+    def large_box_click(self):
+        self.small_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.medium_box.setStyleSheet("background-color: rgb(255,255,255)")
+        self.large_box.setStyleSheet("background-color: rgb(0,200,0)")
+    
+    def fragile_box_click(self):
+        self.fragile_box.setStyleSheet("background-color: rgb(0,200,0)")
 
 if __name__ == "__main__":
     import sys

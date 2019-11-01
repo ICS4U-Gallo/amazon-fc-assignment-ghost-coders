@@ -18,14 +18,18 @@ class MainWindow(QtWidgets.QMainWindow):
         self.gui.cont.clicked.connect(self.startGUI2)
         self.show()
         
+        
     def startGUI2(self):
         self.gui_2.setupUi(self)
         self.gui_2.pushButton.clicked.connect(self.startGUI3)
         self.show()
+        Product(self.gui_2.item[0])
+        
     
     def startGUI3(self):
+        Shelf.add(self.gui_2.shelf_num, self.gui_2.compartment_num)
         self.gui_3.setupUi(self)
-        self.gui_3.pushButton.clicked.connect(self.startGUI4)
+        self.gui_3.cont.clicked.connect(self.startGUI4)
         self.show()
     
     def startGUI4(self):

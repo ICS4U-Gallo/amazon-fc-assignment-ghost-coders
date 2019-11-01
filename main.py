@@ -141,6 +141,7 @@ def main():
 
     print(shirt)
     print(pants)
+    
     print(trolly)
 
 

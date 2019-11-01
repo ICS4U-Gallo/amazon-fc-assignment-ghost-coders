@@ -14,52 +14,42 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QPushButton" name="in_bin">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>260</x>
       <y>180</y>
-      <width>411</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>30</y>
-      <width>791</width>
-      <height>111</height>
+      <width>251</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Sitka</family>
-      <pointsize>30</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Enter the Barcode that will go to the bin</string>
+     <string>In Bin</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Enter">
+   <widget class="QPushButton" name="cont">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>310</y>
-      <width>201</width>
-      <height>101</height>
+      <x>580</x>
+      <y>180</y>
+      <width>251</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Sitka</family>
-      <pointsize>30</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Enter</string>
+     <string>Continue</string>
     </property>
    </widget>
   </widget>

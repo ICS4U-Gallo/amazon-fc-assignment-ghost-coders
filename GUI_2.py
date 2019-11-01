@@ -7,6 +7,7 @@ class GUI_2(object):
         item = json.load(f)
 
     def setupUi(self, MainWindow):
+        self.item = GUI_2.item
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 670)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -149,19 +150,29 @@ class GUI_2(object):
         self.compartment_8.clicked.connect(self.compartment_8_click)
         self.compartment_9.clicked.connect(self.compartment_9_click)
         self.compartment_10.clicked.connect(self.compartment_10_click)
+        
 
     def shelf_A_click(self):
         self.shelf_A.setStyleSheet("background-color: rgb(0,200,0)")
         self.shelf_B.setStyleSheet("background-color: rgb(255,255,255)")
         self.shelf_C.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_num = "A"
+        return self.shelf_num
+
     def shelf_B_click(self):
         self.shelf_A.setStyleSheet("background-color: rgb(255,255,255)")
         self.shelf_B.setStyleSheet("background-color: rgb(0,200,0)")
         self.shelf_C.setStyleSheet("background-color: rgb(255,255,255)")
+        self.shelf_num = "B"
+        return self.shelf_num
+
     def shelf_C_click(self):
         self.shelf_A.setStyleSheet("background-color: rgb(255,255,255)")
         self.shelf_B.setStyleSheet("background-color: rgb(255,255,255)")
         self.shelf_C.setStyleSheet("background-color: rgb(0,200,0)")
+        self.shelf_num = "C"
+        return self.shelf_num
+
     def compartment_1_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(0,200,0)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -173,6 +184,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 1
+        return self.compartment_num
+        
     def compartment_2_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(0,200,0)")
@@ -184,6 +198,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 2
+        return self.compartment_num
+
     def compartment_3_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -195,6 +212,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 3
+        return self.compartment_num
+
     def compartment_4_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -206,6 +226,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 4
+        return self.compartment_num
+
     def compartment_5_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -217,6 +240,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 5
+        return self.compartment_num
+
     def compartment_6_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -228,6 +254,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 6
+        return self.compartment_num
+
     def compartment_7_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -239,6 +268,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 7
+        return self.compartment_num
+
     def compartment_8_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -250,6 +282,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(0,200,0)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 8
+        return self.compartment_num
+
     def compartment_9_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -261,6 +296,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(0,200,0)")
         self.compartment_10.setStyleSheet("background-color: rgb(255,255,255)")
+        self.compartment_num = 9
+        return self.compartment_num
+
     def compartment_10_click(self):
         self.compartment_1.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_2.setStyleSheet("background-color: rgb(255,255,255)")
@@ -272,6 +310,9 @@ class GUI_2(object):
         self.compartment_8.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_9.setStyleSheet("background-color: rgb(255,255,255)")
         self.compartment_10.setStyleSheet("background-color: rgb(0,200,0)")
+        self.compartment_num = 10
+        return self.compartment_num
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -292,7 +333,7 @@ class GUI_2(object):
         self.label_2.setText(_translate("MainWindow", "Compartment"))
         self.barcode.setText(_translate("MainWindow", f"{GUI_2.item[0]}"))
         self.pushButton.setText(_translate("MainWindow", "Continue"))
-        
+    
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

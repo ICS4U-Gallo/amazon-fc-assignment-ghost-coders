@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import json
+import json, main
 
 class GUI_3(object):
     def setupUi(self, MainWindow):
@@ -7,33 +7,35 @@ class GUI_3(object):
         MainWindow.resize(1124, 668)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(380, 180, 411, 41))
-        self.lineEdit.setObjectName("lineEdit")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(190, 30, 791, 111))
+        self.in_bin = QtWidgets.QPushButton(self.centralwidget)
+        self.in_bin.setGeometry(QtCore.QRect(260, 180, 251, 231))
         font = QtGui.QFont()
         font.setFamily("Sitka")
-        font.setPointSize(30)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.Enter = QtWidgets.QPushButton(self.centralwidget)
-        self.Enter.setGeometry(QtCore.QRect(500, 310, 201, 101))
+        font.setPointSize(24)
+        self.in_bin.setFont(font)
+        self.in_bin.setObjectName("in_bin")
+        self.cont = QtWidgets.QPushButton(self.centralwidget)
+        self.cont.setGeometry(QtCore.QRect(580, 180, 251, 231))
         font = QtGui.QFont()
         font.setFamily("Sitka")
-        font.setPointSize(30)
-        self.Enter.setFont(font)
-        self.Enter.setObjectName("Enter")
+        font.setPointSize(24)
+        self.cont.setFont(font)
+        self.cont.setObjectName("cont")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.in_bin.clicked.connect(self.in_bin_click)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Enter the Barcode that will go to the bin"))
-        self.Enter.setText(_translate("MainWindow", "Enter"))
+        self.in_bin.setText(_translate("MainWindow", "In Bin"))
+        self.cont.setText(_translate("MainWindow", "Continue"))
+
+    def in_bin_click(self):
+        self.in_bin.setStyleSheet("background-color: rgb(0,200,0)")
+        main.Bin.add()
 
 if __name__ == "__main__":
     import sys

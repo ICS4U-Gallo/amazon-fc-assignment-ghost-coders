@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
-import json
+import json, GUI_2
 
 class GUI(object):
     def setupUi(self, MainWindow):
@@ -65,6 +65,7 @@ class GUI(object):
         self.enter.setText(_translate("MainWindow", "Enter"))
         self.cont.setText(_translate("MainWindow", "Continue"))
 
+    
 
 if __name__ == "__main__":
     import sys
