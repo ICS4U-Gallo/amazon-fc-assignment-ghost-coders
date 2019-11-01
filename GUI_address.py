@@ -28,16 +28,14 @@ class Ui_gui_address(object):
 
         self.retranslateUi(gui_address)
         QtCore.QMetaObject.connectSlotsByName(gui_address)
-
+        self.address = self.lineEdit.text()
+        
     def retranslateUi(self, gui_address):
         _translate = QtCore.QCoreApplication.translate
         gui_address.setWindowTitle(_translate("gui_address", "MainWindow"))
         self.label.setText(_translate("gui_address", "Please enter Shipping Address"))
         self.cont.setText(_translate("gui_address", "Continue"))
-
-    def cont(self):
-        self.address = self.lineEdit.text()
-        return self.address
+       
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
