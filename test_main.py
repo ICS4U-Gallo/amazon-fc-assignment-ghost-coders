@@ -1,9 +1,11 @@
 from main import *
 import unittest
 
+
 """
 Product
 """
+
 def test_can_create_product():
   Toothbrash = Product(1)
   assert Toothbrash.barcode == 1
@@ -13,7 +15,7 @@ def test_can_create_product():
 
   Bag = Product(35)
   assert Bag.barcode == 35
-  
+
 """
 Trolly
 """
@@ -121,6 +123,7 @@ def test_can_takeoff_shelf():
     storage = json.load(f)
   assert storage["C"]["6"] == []
 
+
 """
 Bin
 """
@@ -168,21 +171,22 @@ def test_can_takeoff_bin():
     storage = json.load(f)
   assert storage == []
 
+
   """
   Packaging
   """
-  def test_can_create_package():
-    package_01 = Packaging("Plastic", "123 Street", "Truck 01")
-    assert package_01.box_type == "Plastic"
-    assert package_01.address == "123 Street"
-    assert package_01.truck == "Truck 01"
+def test_can_create_package():
+  package_01 = Packaging("Plastic", "123 Street", "Truck 01")
+  assert package_01.box_type == "Plastic"
+  assert package_01.address == "123 Street"
+  assert package_01.truck == "Truck 01"
 
-    package_02 = Packaging("Iron", "9090 Street", "Truck 02")
-    assert package_01.box_type == "Iron"
-    assert package_01.address == "9090 Street"
-    assert package_01.truck == "Truck 02"
+  package_02 = Packaging("Iron", "9090 Street", "Truck 02")
+  assert package_01.box_type == "Iron"
+  assert package_01.address == "9090 Street"
+  assert package_01.truck == "Truck 02"
 
-    package_03 = Packaging("Paper", "487 Street", "Truck 03")
-    assert package_01.box_type == "Paper"
-    assert package_01.address == "487 Street"
-    assert package_01.truck == "Truck 03"
+  package_03 = Packaging("Paper", "487 Street", "Truck 03")
+  assert package_01.box_type == "Paper"
+  assert package_01.address == "487 Street"
+  assert package_01.truck == "Truck 03"
