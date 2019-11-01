@@ -13,6 +13,7 @@ def test_can_create_product():
 
   Bag = Product(35)
   assert Bag.barcode == 35
+  
 """
 Trolly
 """
