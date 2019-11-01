@@ -1,8 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import json, main
+import json, main, GUI
 
 class GUI_3(object):
     def setupUi(self, MainWindow):
+        self.gui = GUI()
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 668)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -35,7 +36,7 @@ class GUI_3(object):
 
     def in_bin_click(self):
         self.in_bin.setStyleSheet("background-color: rgb(0,200,0)")
-        main.Bin.add()
+        main.Bin.add(self.gui.product)
 
 if __name__ == "__main__":
     import sys
