@@ -46,7 +46,8 @@ class GUI(object):
         with open("barcode.json", "r") as f:
             barcodes = json.load(f)
 
-        barcodes.append(self.lineEdit)
+        barcodes.append(self.lineEdit.text())
+        self.lineEdit.clear()
 
         with open("barcode.json", "w") as f:
             json.dump(barcodes, f)
@@ -57,7 +58,7 @@ class GUI(object):
             item = QtGui.QStandardItem(barcode)
             model.appendRow(item)
         
-        self.gridLayout.addWidget(self.listView, 680, 40, 411, 561)
+        
 
 
     def retranslateUi(self, MainWindow):

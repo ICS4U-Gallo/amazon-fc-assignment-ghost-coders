@@ -43,6 +43,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.show()
         delay = QtCore.QTimer
         delay.interval(1000)
+        GUI_2.GUI_2.barcode.remove(GUI_2.GUI_2.barcode[0])
+        with open("barcode.json", "w") as f:
+            json.dump(GUI_2.GUI_2.barcode, f)
         self.startGUI2
         
                    
