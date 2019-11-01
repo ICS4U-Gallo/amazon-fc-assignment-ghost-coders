@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.gui_3.setupUi(self)
         self.gui_3.cont.clicked.connect(self.startGUI4)
         self.show()
-        Shelf.remove(self.gui.product)
+        
 
     def startGUI4(self):
         self.shelf.remove(self.gui.product)
@@ -50,7 +50,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def startGUIAddress(self):
         self.gui_address.setupUi(self)
-        self.gui_address.cont.clicked.connect(self.startGUIfinal, self.gui_address.cont)
+        self.gui_address.cont.clicked.connect(self.startGUIfinal)
         self.bin.remove(self.gui.product)
         self.show()
 
@@ -58,12 +58,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.box = Packaging(self.gui_box_type.box_type, self.gui_address.address, "Truck 1")
         self.gui_final.setupUi(self)
         self.show()
-        delay = QtCore.QTimer
-        delay.interval(1000)
-        GUI_2.GUI_2.barcode.remove(GUI_2.GUI_2.barcode[0])
+        delay = QtCore.QTimer(self)
+        delay.timeout.connect(self.startGUIfinal)
+        delay.start(1000)
+        with open("barcode.json", "r") as f:
+            barcodes = json.load(f)
+        barcodes.pop(1)
         with open("barcode.json", "w") as f:
-            json.dump(GUI_2.GUI_2.barcode, f)
-        if len(GUI_2.GUI_2.barcode) > 0:
+            json.dump(barcodes, f)
+        if len(barcodes) > 0:
             self.startGUI2
         else: 
             self.startGUI
@@ -73,4 +76,3 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     ui = MainWindow()
     sys.exit(app.exec_())
-
