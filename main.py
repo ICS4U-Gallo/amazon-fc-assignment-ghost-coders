@@ -79,12 +79,12 @@ class Shelf:
             storage = json.load(f)
         
         for value in storage.values():
-            for value in value.values():
-                for barcode in value:
-                    if product.barcode == value:
-                        value.remove(product.barcode)
+            for value2 in value.values():
+                for barcode in value2:
+                    if product.barcode == barcode:
+                        value2.remove(product.barcode)
         
-        with open("trolly.json", "w") as f:
+        with open("Compartment.json", "w") as f:
             json.dump(storage, f)
 
 

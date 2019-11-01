@@ -37,19 +37,19 @@ def test_can_create_shelf():
 
 def test_can_puton_shelf():
   Toothbrash = Product(1)
-  Shelf_A = Shelf("A", 1)
-  Shelf_A.add("A", 1, Toothbrash)
+  Shelf_A = Shelf("A", "1")
+  Shelf_A.add("A", "1", Toothbrash)
   with open("Compartment.json", 'r') as f:
     storage = json.load(f)
-  assert storage[shelf_num][compartment_num] == [1]
+  assert storage["A"]["1"] == [1]
 
 def test_can_takeoff_shelf():
   Toothbrash = Product(1)
-  Shelf_A = Shelf("A", 1)
+  Shelf_A = Shelf("A", "1")
   Shelf_A.remove(Toothbrash)
   with open("Compartment.json", "r") as f:
     storage = json.load(f)
-  assert storage[shelf_num][compartment_num] == []
+  assert storage["A"]["1"] == []
 
 """
 Bin
