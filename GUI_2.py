@@ -1,8 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
-
+import json
 
 class GUI_2(object):
+    with open("barcode.json", "r") as f:
+        item = json.load(f)
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 670)
@@ -123,13 +126,13 @@ class GUI_2(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1124, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        self.barcode = QtWidgets.QLabel(self.centralwidget)
+        self.barcode.setGeometry(QtCore.QRect(750, 30, 321, 81))
+        font = QtGui.QFont()
+        font.setFamily("Sitka")
+        font.setPointSize(40)
+        self.barcode.setFont(font)
+        self.barcode.setObjectName("label")
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -152,6 +155,7 @@ class GUI_2(object):
         self.shelf_C.setText(_translate("MainWindow", "C"))
         self.label.setText(_translate("MainWindow", "Shelf"))
         self.label_2.setText(_translate("MainWindow", "Compartment"))
+        self.barcode.setText(_translate("MainWindow", f"{GUI_2.item[0]}"))
         self.pushButton.setText(_translate("MainWindow", "Continue"))
         
 if __name__ == "__main__":

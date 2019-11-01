@@ -17,8 +17,8 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>150</y>
+      <x>380</x>
+      <y>180</y>
       <width>411</width>
       <height>41</height>
      </rect>
@@ -27,7 +27,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>190</x>
       <y>30</y>
       <width>791</width>
       <height>111</height>
@@ -43,21 +43,11 @@
      <string>Enter the Barcode that will go to the bin</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>150</y>
-      <width>461</width>
-      <height>461</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Enter">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>220</y>
+      <x>500</x>
+      <y>310</y>
       <width>201</width>
       <height>101</height>
      </rect>

@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
-
+import json
 
 class GUI_4(object):
     def setupUi(self, MainWindow):
@@ -18,7 +18,6 @@ class GUI_4(object):
         self.pushButton.setObjectName("Send TO Packaging")
         MainWindow.setCentralWidget(self.centralwidget)
      
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -32,7 +31,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = GUI_4()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

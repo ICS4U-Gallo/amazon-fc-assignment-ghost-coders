@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="small_box">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -23,24 +23,36 @@
       <height>211</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Small Box</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="fragile_box">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>100</x>
       <y>450</y>
-      <width>641</width>
+      <width>451</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>24</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Fragile</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="large_box">
     <property name="geometry">
      <rect>
       <x>790</x>
@@ -49,11 +61,17 @@
       <height>211</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Large Box</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="medium_box">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -61,6 +79,12 @@
       <width>241</width>
       <height>211</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>24</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Medium Box</string>
@@ -71,7 +95,7 @@
      <rect>
       <x>390</x>
       <y>50</y>
-      <width>531</width>
+      <width>401</width>
       <height>101</height>
      </rect>
     </property>
@@ -83,6 +107,25 @@
     </property>
     <property name="text">
      <string>Select Box Type</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fragile_box_2">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>450</y>
+      <width>451</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Continue</string>
     </property>
    </widget>
   </widget>

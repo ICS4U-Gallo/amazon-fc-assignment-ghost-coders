@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
+import json
 
 class GUI(object):
     def setupUi(self, MainWindow):
@@ -18,13 +19,13 @@ class GUI(object):
         font.setPointSize(28)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.Enter = QtWidgets.QPushButton(self.centralwidget)
-        self.Enter.setGeometry(QtCore.QRect(160, 310, 261, 81))
+        self.enter = QtWidgets.QPushButton(self.centralwidget)
+        self.enter.setGeometry(QtCore.QRect(160, 310, 261, 81))
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(28)
-        self.Enter.setFont(font)
-        self.Enter.setObjectName("Enter")
+        self.enter.setFont(font)
+        self.enter.setObjectName("Enter")
         self.listView = QtWidgets.QListView(self.centralwidget)
         self.listView.setGeometry(QtCore.QRect(680, 40, 411, 561))
         self.listView.setObjectName("listView")
@@ -38,17 +39,32 @@ class GUI(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)        
+        QtCore.QMetaObject.connectSlotsByName(MainWindow) 
+        self.enter.clicked.connect(self.enter_click)
 
     def enter_click(self):
-            pass
+        with open("barcode.json", "r") as f:
+            barcodes = json.load(f)
+
+        barcodes.append(self.lineEdit)
+
+        with open("barcode.json", "w") as f:
+            json.dump(barcodes, f)
         
+        model = QtGui.QStandardItemModel()
+        self.listView.setModel(model)
+        for barcode in barcodes:
+            item = QtGui.QStandardItem(barcode)
+            model.appendRow(item)
+        
+        self.gridLayout.addWidget(self.listView, 680, 40, 411, 561)
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Please Enter Product Barcode"))
-        self.Enter.setText(_translate("MainWindow", "Enter"))
+        self.enter.setText(_translate("MainWindow", "Enter"))
         self.cont.setText(_translate("MainWindow", "Continue"))
 
 
