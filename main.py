@@ -131,6 +131,11 @@ class Packaging:
     
     def __str__(self):
         return "The order has been shipped"
+        with open("bin.json", "r") as f:
+            storage = json.load(f)
+
+        return f"""The order has been shopped.
+        {str(storage)}"""
 
     
 def main():
