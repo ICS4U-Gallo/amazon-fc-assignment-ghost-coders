@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.gui_3.setupUi(self)
         self.gui_3.cont.clicked.connect(self.startGUI4)
         self.show()
-        Shelf.remove(self.item)
+        Shelf.remove(self.gui.product)
 
     def startGUI4(self):
         self.shelf.remove(self.gui.product)

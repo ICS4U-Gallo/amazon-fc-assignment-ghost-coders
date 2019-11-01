@@ -59,7 +59,7 @@ class GUI(object):
             item = QtGui.QStandardItem(barcode)
             model.appendRow(item)
         
-        self.product = Product(int(barcodes[0]))
+        self.product = Product(barcodes[0])
         self.trolly = Trolly()
         self.trolly.add(self.product)
 
