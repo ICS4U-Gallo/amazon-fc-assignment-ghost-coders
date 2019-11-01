@@ -60,9 +60,8 @@ class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self, shelf_num: str, compartment_num: str):
-        self.shelf_num = shelf_num
-        self.compartment_num = compartment_num
+    def __init__(self):
+        pass
 
 
     def add(self, shelf_num: str, compartment_num: int, product: Product):
@@ -130,11 +129,12 @@ class Packaging:
         self.truck = truck
     
     def __str__(self):
-        # return "The order has been shipped"
+        return "The order has been shipped"
         with open("bin.json", "r") as f:
             storage = json.load(f)
         
-        return str(storage)
+        return f"""The order has been shipped.
+        {str(storage)}"""
 
     
 def main():
@@ -146,8 +146,7 @@ def main():
 
     the_bin.add(shirt)
 
-    print(packaging)
-
+    print(shelf)
 
 
 if __name__ == "__main__":
