@@ -60,7 +60,7 @@ class Shelf:
     """Shelf Class
     Holds the product in a specific shelf and compartment location (number)
     """
-    def __init__(self, shelf_num: str, compartment_num: int):
+    def __init__(self, shelf_num: str, compartment_num: str):
         self.shelf_num = shelf_num
         self.compartment_num = compartment_num
 
