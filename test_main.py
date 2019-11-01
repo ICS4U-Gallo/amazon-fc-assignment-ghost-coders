@@ -1,10 +1,10 @@
 from main import *
 import unittest
 
-
 """
 Product
 """
+
 
 def test_can_create_product():
   Toothbrash = Product(1)
@@ -19,6 +19,8 @@ def test_can_create_product():
 """
 Trolly
 """
+
+
 def test_can_puton_trolly():
   Toothbrash = Product(1)
   trolly = Trolly()
@@ -40,6 +42,7 @@ def test_can_puton_trolly():
   with open("trolly.json", "r") as f:
     storage = json.load(f)
   assert storage == [1, 2, 35]
+
 
 def test_can_takeoff_trolly():
   Toothbrash = Product(1)
@@ -66,6 +69,8 @@ def test_can_takeoff_trolly():
 """
 Shelf
 """
+
+
 def test_can_create_shelf():
   Shelf_A = Shelf("A", "1")
   assert Shelf_A.shelf_num == "A"
@@ -78,6 +83,7 @@ def test_can_create_shelf():
   Shelf_C = Shelf("C", "6")
   assert Shelf_C.shelf_num == "C"
   assert Shelf_C.compartment_num == "6"
+
 
 def test_can_puton_shelf():
   Toothbrash = Product(1)
@@ -101,6 +107,7 @@ def test_can_puton_shelf():
     storage = json.load(f)
   assert storage["C"]["6"] == [35]
 
+
 def test_can_takeoff_shelf():
   Toothbrash = Product(1)
   Shelf_A = Shelf("A", "1")
@@ -123,31 +130,33 @@ def test_can_takeoff_shelf():
     storage = json.load(f)
   assert storage["C"]["6"] == []
 
-
 """
 Bin
 """
+
+
 def test_can_puton_bin():
   Toothbrash = Product(1)
   bin = Bin()
   bin.add(Toothbrash)
   with open("bin.json", "r") as f:
     storage = json.load(f)
-  assert  storage == [1]
+  assert storage == [1]
 
   Fork = Product(2)
   bin = Bin()
   bin.add(Fork)
   with open("bin.json", "r") as f:
     storage = json.load(f)
-  assert  storage == [1, 2]
+  assert storage == [1, 2]
 
   Bag = Product(35)
   bin = Bin()
   bin.add(Bag)
   with open("bin.json", "r") as f:
     storage = json.load(f)
-  assert  storage == [1, 2, 35]
+  assert storage == [1, 2, 35]
+
 
 def test_can_takeoff_bin():
   Toothbrash = Product(1)
@@ -171,10 +180,11 @@ def test_can_takeoff_bin():
     storage = json.load(f)
   assert storage == []
 
-
   """
   Packaging
   """
+
+
 def test_can_create_package():
   package_01 = Packaging("Plastic", "123 Street", "Truck 01")
   assert package_01.box_type == "Plastic"
