@@ -58,9 +58,6 @@ class GUI(object):
             item = QtGui.QStandardItem(barcode)
             model.appendRow(item)
         
-        
-
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
