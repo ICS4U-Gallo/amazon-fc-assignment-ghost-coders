@@ -1,10 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
-from GUI_3 import *
 
-class Ui_MainWindow(object):
+
+class GUI_2(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("Amazon FC")
+        MainWindow.setWindowTitle("Amazon FC")
         MainWindow.resize(1124, 672)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -116,16 +117,18 @@ class Ui_MainWindow(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1124, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(790, 420, 251, 101))
+        font = QtGui.QFont()
+        font.setFamily("Sitka")
+        font.setPointSize(24)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -145,13 +148,13 @@ class Ui_MainWindow(object):
         self.shelf_C.setText(_translate("MainWindow", "C"))
         self.label.setText(_translate("MainWindow", "Shelf"))
         self.label_2.setText(_translate("MainWindow", "Compartment"))
-
-
+        self.pushButton.setText(_translate("MainWindow", "Continue"))
+  
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = GUI_2()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
