@@ -5,17 +5,17 @@ import GUI, GUI_2, GUI_3, GUI_4, GUI_box_type, GUI_final
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
-        self.GUI = GUI.GUI()
-        self.GUI_2 = GUI_2.GUI_2()
-        self.GUI_3 = GUI_3.GUI_3()
-        self.GUI_4 = GUI_4.GUI_4()
-        self.GUI_box_type = GUI_box_type.GUI_box_type()
-        self.GUI_final = GUI_final.GUI_final()
+        self.gui = GUI.GUI()
+        self.gui_2 = GUI_2.GUI_2()
+        self.gui_3 = GUI_3.GUI_3()
+        self.gui_4 = GUI_4.GUI_4()
+        self.gui_box_type = GUI_box_type.GUI_box_type()
+        self.gui_final = GUI_final.GUI_final()
         self.startGUI()
     
     def startGUI(self):
-        self.GUI.setupUi(self)
-        self.GUI.cont.clicked.connect(self.startGUI_2())
+        self.gui.setupUi(self)
+        self.gui.cont.clicked.connect(self.startGUI2)
         self.show()
         
     def startGUI2(self):
